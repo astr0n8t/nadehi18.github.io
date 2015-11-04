@@ -332,6 +332,8 @@ a:visited
 #sociall
 {
   padding-top: 10px;
+  color: black;
+  text-align: center;
 }
 
 #you:hover
@@ -355,3 +357,22 @@ a:visited
 {
   transform: scale(1, 1);
 }
+
+#thanks /**thanks page styling**/
+ {
+   width: 70%;
+   height: 300px;
+   box-shadow: 0 0 2px black;
+   background-color: #FFFFFF;
+   margin: auto;
+   color: #FF5722;
+   padding: 10px;
+   font-size: 20px;
+   text-align: left;
+   padding-left: 40px;
+  }
+
+  #another
+  {
+    font-size: 14px;
+  }
