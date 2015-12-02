@@ -79,7 +79,7 @@ html, body { /**Main styling**/
 #home {
   background-image: url(images/background1.PNG); /**Photo credit in this div belongs to NASA. Used under puplic domain.**/
   font-family: 'Poiret One', cursive;
-  font-size: 36px;
+  font-size: 24px;
   color: white;
   background-size: 100% 100%;
   box-shadow: 0 0 5px black;
