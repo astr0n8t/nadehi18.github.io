@@ -1,15 +1,26 @@
 <!doctype html>
 <html>
 <head>
+<meta name=viewport content="width=device-width, initial-scale=1">
 <title>Contact</title>
 <script type="text/javascript" src="../scripts/https.js"></script><!--Simply forces users to use HTTPS when connecting-->
  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Droid+Sans|Poiret+One' rel='stylesheet' type='text/css'>
  <link rel="stylesheet" href="../styles.css">
  <link rel="shortcut icon" href="../images/favicon.png">
  <link rel="canonical" href="https://yoursite.github.io" />
+ <script type="text/javascript" src=../scripts/visibility.js></script>
 </head>
 <body>
 <div id="container">
+  <div id=mnav>
+    <a href="#" onclick="toggle_visibility('mlink');"><img src=../images/bars.png height=20px width=20px></a>
+  </div>
+  <div id=mlink>
+  <a id=mnavlin href=../index.html>Home</a><br><hr>
+  <a id=mnavlin href=../pages/about.html>About</a><br><hr>
+  <a id=mnavlin href=../pages/portfolio.html>Portfolio</a><br><hr>
+  <a id=mnavlinc href=../pages/contact.html>Contact</a>
+  </div>
   <div id=nav>
     <a id=link1 className="navlin" href=../index.html>Home</a>
     <a id=link2 className="navlin" href=../pages/about.html>About</a>
