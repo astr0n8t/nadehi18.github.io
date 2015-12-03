@@ -14,7 +14,7 @@ html, body { /**Main styling**/
    padding: 4px;
  }
 
-@media (max-width: 700px) and (orientation: portrait) {
+@media (max-width: 700px) and (orientation: portrait),(max-width: 575px) and (orientation: landscape) {
 #nav {
   display: none;
 }
@@ -39,6 +39,7 @@ html, body { /**Main styling**/
   width: 100%;
   padding: 10px;
   display: block;
+  position: fixed;
 }
 #mlink {
   display: none;
@@ -330,7 +331,7 @@ a:visited
 
 }
 
-@media (min-width: 700px), (orientation: landscape) {
+@media (min-width: 700px), (orientation: landscape) and (min-width: 575px) {
 
 #mnav {
  display: none;
