@@ -709,4 +709,8 @@ a:visited
   {
     font-size: 14px;
   }
+
+  #spcr1 {
+    display: none;
+  }
 }
