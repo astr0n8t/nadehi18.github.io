@@ -10,11 +10,19 @@ html, body { /**Main styling**/
  min-height:100%;
  }
 
-#spcr {
-   padding: 4px;
+ a:link
+ {
+     text-decoration: none;
+     color: #607D8B;
  }
 
-@media (max-width: 700px) and (orientation: portrait),(max-width: 575px) and (orientation: landscape) {
+ a:visited
+ {
+   text-decoration: none;
+   color: #607D8B;
+ }
+
+@media (max-width: 700px) and (orientation: portrait),(max-width: 575px) and (orientation: landscape) { /**Make sure device is mobile, second part is added because some devices will not fit in the other one**/
 #nav {
   display: none;
 }
@@ -144,18 +152,6 @@ html, body { /**Main styling**/
    text-align: left;
  }
 
-a:link
-{
-    text-decoration: none;
-    color: #607D8B;
-}
-
-a:visited
-{
-  text-decoration: none;
-  color: #607D8B;
-}
-
  #hdr
  {
    font-size: 20px;
@@ -178,6 +174,13 @@ a:visited
    margin: auto;
   }
 
+  #con
+  {
+    font-family: 'Roboto';
+    padding-top: 10px;
+    font-size: 20px;
+  }
+
 #form
  {
   text-align: left;
@@ -191,13 +194,6 @@ a:visited
   padding: 10px;
   color: #1565C0;
  }
-
-#con
-{
-  font-family: 'Roboto';
-  padding-top: 10px;
-  font-size: 20px;
-}
 
 #form input
 {
@@ -341,7 +337,7 @@ a:visited
 
 }
 
-@media (min-width: 700px), (orientation: landscape) and (min-width: 575px) {
+@media (min-width: 700px), (orientation: landscape) and (min-width: 575px) { /**Makes sure device is big enough for full desktop version.**/
 
 #mnav {
  display: none;
@@ -528,18 +524,6 @@ a:visited
    text-align: left;
  }
 
-a:link
-{
-    text-decoration: none;
-    color: #607D8B;
-}
-
-a:visited
-{
-  text-decoration: none;
-  color: #607D8B;
-}
-
  #hdr
  {
    font-size: 20px;
@@ -562,6 +546,13 @@ a:visited
    margin: auto;
   }
 
+  #con
+  {
+    font-family: 'Roboto';
+    padding-top: 10px;
+    font-size: 16px;
+  }
+
 #form
  {
   text-align: left;
@@ -577,13 +568,6 @@ a:visited
   border-radius: 10px;
   box-shadow: 0 0 5px #1565C0;
  }
-
-#con
-{
-  font-family: 'Roboto';
-  padding-top: 10px;
-  font-size: 16px;
-}
 
 #form input
 {
