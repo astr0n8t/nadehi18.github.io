@@ -6,11 +6,6 @@ html, body { /**Main styling**/
     height: 100%;
 }
 
-#main {
-  font-family: 'Roboto';
-  padding-top: 100px;
-}
-
 #fav, #you, #insta {
   width: 80%;
   height: 80%;
