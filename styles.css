@@ -1,701 +1,174 @@
 html, body { /**Main styling**/
-    text-align: center;
-    background-color: #E0E0E0;
-    padding: 0px;
-    margin: 0;
-    height: 100%;
-}
-
-#container {
- min-height:100%;
- }
-
- a:link
- {
-     text-decoration: none;
-     color: #607D8B;
- }
-
- a:visited
- {
-   text-decoration: none;
-   color: #607D8B;
- }
-
-@media (max-width: 700px) and (orientation: portrait),(max-width: 575px) and (orientation: landscape) { /**Make sure device is mobile, second part is added because some devices will not fit in the other one**/
-#nav {
-  display: none;
-}
-
-#mbut {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#mbut:active {
-  background-color: #303F9F;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#mnav {
-  font-size: 24px;
-  font-family: 'Roboto';
-  background-color: #3F51B5;
-  text-align: left;
-  box-shadow: 0 0 2px black;
-  width: 100%;
-  padding: 10px;
-  display: block;
-  position: fixed;
-}
-#mlink {
-  display: none;
-  position: fixed;
-  color: white;
-  font-family: 'Roboto';
-  background-color: black;
-  font-size: 30px;
+  text-align: center;
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 0px;
   margin: 0;
-  padding: 20px;
-  width: 50%;
-  box-shadow: 0 0 5px black;
-  text-align: center;
-  height: 93%;
+  height: 100%;
 }
 
-#mnavlin {
-  color: white;
-  border-radius: 10px;
-  border: white;
-  border-style: solid;
-  border-width: 2px;
-  padding: 10px;
-}
-
-#mnavlin:active {
-  color: white;
-  background-color: #3F51B5;
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-  border: none;
-}
-
-#mnavlinc {
-  color: white;
-  background-color: #3F51B5;
-  padding: 10px;
-  border-radius: 10px;
-  width: 100%;
-}
-
-#home {
-  background-image: url(images/background1.PNG); /**Photo credit in this div belongs to NASA. Used under puplic domain.**/
-  font-family: 'Poiret One', cursive;
-  font-size: 24px;
-  color: white;
-  background-size: 100% 100%;
-  box-shadow: 0 0 5px black;
-  border-top: 10px;
-  padding-bottom: 20px;
-  padding: 10px;
-  height: 600px;
-  width: 90%;
-  margin: auto;
-}
-
-#about1 /**about page styling**/
- {
-   background-color: #FFFFFF;
-   font-family: 'Roboto';
-   font-size: 15px;
-   color: #000000;
-   text-align: center;
-   border-top: 1px;
-   border-bottom: 1px;
-   width: 95%;
-   height: auto;
-   margin: auto;
-   box-shadow: 0 0 3px black;
-   line-height: 25px;
- }
-
-#aboutt
+a:link
 {
-  text-align: center;
-  padding: 20px;
-  font-family: 'Roboto';
-  font-size: 16px;
-  margin: auto;
-  padding-top: 5%;
-  padding-left: 20px;
+   text-decoration: none;
+   color: #0465a9;
 }
 
-
-#favi
- {
-  display: none;
- }
-
-#port /**portfolio page styling**/
- {
-   width: 90%;
-   height: auto;
-   box-shadow: 0 0 2px black;
-   font-family: 'Roboto';
-   font-size: 16px;
-   background-color: white;
-   color: black;
-   margin: auto;
-   padding: 10px;
-   text-align: left;
- }
-
- #hdr
- {
-   font-size: 20px;
-   color: #FF5722;
-   text-align: center;
- }
-
- #hdr2
- {
-   font-size: 18px;
-   color: #FF5722;
- }
-
-#contact /**contact page styling**/
- {
-   width: 95%;
-   height: auto;
-   box-shadow: 0 0 2px black;
-   background-color: #FFFFFF;
-   margin: auto;
-  }
-
-  #con
-  {
-    font-family: 'Roboto';
-    padding-top: 10px;
-    font-size: 20px;
-  }
-
-#form
- {
-  text-align: left;
-  background-color: #FFFFFF;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 90%;
-  padding: 10px;
-  color: #1565C0;
- }
-
-#form input
+a:visited
 {
-  font-family: 'Roboto';
-  width: 40%;
+ text-decoration: none;
+ color: #0465a9;
 }
 
-#name
+#nav
 {
-  font-size: 15px;
-  font-family: 'Roboto';
-  padding-top: 20px;
+width: 100%;
+height: 7.5%;
+background-color: #242424;
+color: #0465a9;
+position: absolute;
+font-size: 30px;
+padding-top: 1%;
+font-family: 'Open Sans', sans-serif;
+text-align: left;
 }
 
-#name:target
+
+.main
 {
-  box-shadow: 0 0 5px #1565C0;
+ width: 100%;
+ height: 100%;
+ background-color: #242424;
+ color: #0465a9;
+ box-shadow: 0 0 20px black;
+ font-family: 'Ubuntu', sans-serif;
+ font-size: 30px;
+ display: table;
 }
 
-#mess
+#spacer
 {
-  font-size: 15px;
-  font-family: 'Roboto';
-  padding-top: 20px;
-  padding-bottom: 1px;
-  padding-bottom: 1px;
+ width: 100%;
+ height: 20%;
+ background-color: rgba(0, 0, 0, 0.8);
+ opacity: 80%;
 }
 
-#mess:target
+#panel1
 {
-  box-shadow: 0 0 5px #1565C0;
-}
-
-#messb
-{
-  width: 95%;
-  height: 130px;
-}
-
-#email
-{
-  font-size: 15px;
-  font-family: 'Roboto';
-  padding-top: 20px;
-  padding-bottom: 1px;
-}
-
-#email:target
-{
-  box-shadow: 0 0 5px #1565C0;
-}
-
-#submit
-{
-  background-color: #FF5722;
-  border: none;
-  color: #FBE9E7;
-  width: 70px;
-  height: 35px;
-  font-family: 'Roboto';
-  font-size: 18px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-#submit:active
-{
-  color:  #FF5722;
-  background-color: #FBE9E7;
-}
-
-#socialp
-{
-  padding-top: 5px;
-  font-family: 'Roboto';
-  font-size: 18px;
-}
-
-#sociall
-{
-  padding-top: 10px;
-  color: black;
-  text-align: center;
-}
-
-#you:active
-{
-  transform: scale(1, 1);
-}
-
-#insta:active
-{
-  transform: scale(1, 1);
-}
-
-#thanks /**thanks page styling**/
- {
-   width: 80%;
-   height: auto;
-   box-shadow: 0 0 2px black;
-   background-color: #FFFFFF;
-   margin: auto;
-   color: #FF5722;
-   padding: 10px;
-   font-size: 20px;
-   text-align: left;
-   padding-left: 40px;
-  }
-
-  #another
-  {
-    font-size: 16px;
-  }
-
-
-  #footer {
-    font-family: 'Roboto';
-    color: white;
-    background: #3F51B5;
-    padding-bottom: 2px;
-    padding-top: 2px;
-    vertical-align: middle;
-    text-align: left;
-    padding-left: 10px;
-    font-size: 10px;
-    position: relative;
-    bottom: 0;
-    clear: both;
-  }
-
-
-  #love {
-    visibility: hidden;
-  }
-
-  #spcr1 {
-    padding-top: 48px;
-  }
-
-
-
-}
-
-@media (min-width: 700px), (orientation: landscape) and (min-width: 575px) { /**Makes sure device is big enough for full desktop version.**/
-
-#mnav {
- display: none;
-}
-
-#mlink {
-  display: none;
-}
-
-#nav {
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-    background-color: #3F51B5;
-    height: 75px;
-    text-align: center;
-    box-shadow: 0 0 2px black;
-    padding: 0px;
-}
-
-#link1 {
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-  transition: .25s;
-  margin: 20px;
-  font-family: 'Roboto';
-  text-decoration: none;
-  background-color: #3F51B5;
-  padding: 10px;
-  color: white;
-  border-radius: 3px;
-}
-
-#link2 {
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-  transition: .25s;
-  margin: 20px;
-  font-family: 'Roboto';
-  text-decoration: none;
-  background-color: #3F51B5;
-  padding: 10px;
-  color: white;
-  border-radius: 3px;
-}
-
-#link3 {
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-  transition: .25s;
-  margin: 20px;
-  font-family: 'Roboto';
-  text-decoration: none;
-  background-color: #3F51B5;
-  padding: 10px;
-  color: white;
-  border-radius: 3px;
-}
-
-#link4 {
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-  transition: .25s;
-  margin: 20px;
-  font-family: 'Roboto';
-  text-decoration: none;
-  background-color: #3F51B5;
-  padding: 10px;
-  color: white;
-  border-radius: 3px;
-}
-
-#link1:hover
-{
-  background-color: #303F9F;
-}
-
-#link2:hover
-{
-  background-color: #303F9F;
-}
-
-#link3:hover
-{
-  background-color: #303F9F;
-}
-
-#link4:hover
-{
-  background-color: #303F9F;
-}
-
-#footer
-{
-  font-family: 'Roboto';
-  color: white;
-  background: #3F51B5;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  display: table-cell;
   vertical-align: middle;
-  text-align: left;
-  padding-left: 10px;
-  font-size: 10px;
-  position: relative;
-  bottom: 0;
-  clear: both;
 }
 
-#love
+#up
+{
+  text-align: left;
+  padding-left: 3%;
+  padding-bottom: 3%;
+  vertical-align: bottom;
+  display: table-cell;
+}
+
+
+#down
 {
   text-align: right;
-  font-size: 14px;
-  padding-right: 10px;
-  float: right;
+  padding-right: 3%;
+  padding-bottom: 3%;
+  vertical-align: bottom;
+  display: table-cell;
 }
 
-#home { /**homepage styling**/
-    background-image: url(images/background1.PNG); /**Photo credit in this div belongs to NASA. Used under puplic domain.**/
-    font-family: 'Poiret One', cursive;
-    font-size: 36px;
-    color: white;
-    background-size: 100% 100%;
-    box-shadow: 0 0 5px black;
-    border-top: 10px;
-    padding-bottom: 20px;
-    padding: 10px;
-    height: 600px;
-    width: 90%;
-    margin: auto;
-}
-
-#about1 /**about page styling**/
- {
-   background-color: #FFFFFF;
-   font-family: 'Roboto';
-   font-size: 15px;
-   color: #000000;
-   text-align: center;
-   border-top: 1px;
-   border-bottom: 1px;
-   width: 80%;
-   height: 300px;
-   margin: auto;
-   box-shadow: 0 0 3px black;
-   line-height: 25px;
- }
-
-#aboutt
+#arrow
 {
-  text-align: center;
-  padding: 20px;
-  font-family: 'Roboto';
-  font-size: 16px;
-  margin: auto;
-  padding-top: 5%;
-  padding-left: 20px;
+  border: 0px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+#arrow:hover
+{
+  background-color: #0465a9;
+  color: #242424;
+}
+
+#topbutton
+{
+  border: 0px;
+  border-radius: 5%;
+  padding: 5px;
+}
+
+#topbutton:hover
+{
+  background-color: #0465a9;
+  color: #242424;
 }
 
 
-#favi
- {
-   float: right;
-   width: 200px;
-   height: 200px;
-   box-shadow: 0 0 2px black;
-   border-radius: 10px;
-   vertical-align: middle;
- }
-
-#port /**portfolio page styling**/
- {
-   width: 70%;
-   height: auto;
-   box-shadow: 0 0 2px black;
-   font-family: 'Roboto';
-   font-size: 16px;
-   background-color: white;
-   color: black;
-   margin: auto;
-   padding: 10px;
-   text-align: left;
- }
-
- #hdr
- {
-   font-size: 20px;
-   color: #FF5722;
-   text-align: center;
- }
-
- #hdr2
- {
-   font-size: 18px;
-   color: #FF5722;
- }
-
-#contact /**contact page styling**/
- {
-   width: 70%;
-   height: 620px;
-   box-shadow: 0 0 2px black;
-   background-color: #FFFFFF;
-   margin: auto;
-  }
-
-  #con
-  {
-    font-family: 'Roboto';
-    padding-top: 10px;
-    font-size: 16px;
-  }
-
-#form
- {
+#aligner
+{
   text-align: left;
-  background-color: #FFFFFF;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 50%;
-  padding: 10px;
-  color: #1565C0;
+  padding-left: 3%;
+  padding-bottom: 3%;
+  vertical-align: bottom;
+  display: table-cell;
+  color: #242424;
+}
+
+#link
+{
   border-radius: 10px;
-  box-shadow: 0 0 5px #1565C0;
- }
-
-#form input
-{
-  font-family: 'Roboto';
-  width: 40%;
+  border-width: thick;
+  border-style: solid;
+  border-color: #0465a9;
+  padding: 10px;
 }
 
-#name
+#link:hover
 {
-  font-size: 15px;
-  font-family: 'Roboto';
-  padding-top: 20px;
+  transition: .5s;
+  color: #242424;
+  background-color: #0465a9;
 }
 
-#name:target
+#home
 {
-  box-shadow: 0 0 5px #1565C0;
+ padding-left: 10px;
 }
 
-#mess
+#notes
 {
-  font-size: 15px;
-  font-family: 'Roboto';
-  padding-top: 20px;
-  padding-bottom: 1px;
-  padding-bottom: 1px;
+ padding-right: 10px;
+ text-align: right;
+ float: right;
 }
 
-#mess:target
+#vishome
 {
-  box-shadow: 0 0 5px #1565C0; /** Yes this CSS is written by me if you're wondering.**/
+ color: #242424;
 }
 
-#messb
+#home:hover #vishome
 {
-  width: 95%;
-  height: 130px;
+color: #0465a9;
+transition: 1s;
 }
 
-#email
+#visnotes
 {
-  font-size: 15px;
-  font-family: 'Roboto';
-  padding-top: 20px;
-  padding-bottom: 1px;
+color: #242424;
 }
 
-#email:target
+#notes:hover #visnotes
 {
-  box-shadow: 0 0 5px #1565C0;
+color: #0465a9;
+transition: 1s;
 }
 
-#submit
+#visible
 {
-  background-color: #FF5722;
-  border: none;
-  color: #FBE9E7;
-  width: 70px;
-  height: 35px;
-  font-family: 'Roboto';
-  font-size: 18px;
-  border-radius: 3px;
-  cursor: pointer;
+ color: #0465a9;
 }
-
-#submit:hover
-{
-  color:  #FF5722;
-  background-color: #FBE9E7;
-}
-
-#socialp
-{
-  padding-top: 5px;
-  font-family: 'Roboto';
-  font-size: 18px;
-}
-
-#sociall
-{
-  padding-top: 10px;
-  color: black;
-  text-align: center;
-}
-
-#you:hover
-{
-  transform: scale(1.1, 1.1);
-  transition: .25s;
-}
-
-#you:active
-{
-  transform: scale(1, 1);
-}
-
-#insta:hover
-{
-  transform: scale(1.1, 1.1);
-  transition: .25s;
-}
-
-#insta:active
-{
-  transform: scale(1, 1);
-}
-
-#thanks /**thanks page styling**/
- {
-   width: 70%;
-   height: 300px;
-   box-shadow: 0 0 2px black;
-   background-color: #FFFFFF;
-   margin: auto;
-   color: #FF5722;
-   padding: 10px;
-   font-size: 20px;
-   text-align: left;
-   padding-left: 40px;
-  }
-
-  #another
-  {
-    font-size: 14px;
-  }
-
-  #spcr1 {
-    display: none;
-  }
-
-  
