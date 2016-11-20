@@ -118,6 +118,22 @@ text-align: left;
   color: #242424;
 }
 
+#link
+{
+  border-radius: 10px;
+  border-width: thick;
+  border-style: solid;
+  border-color: #0465a9;
+  padding: 10px;
+}
+
+#link:hover
+{
+  transition: .5s;
+  color: #242424;
+  background-color: #0465a9;
+}
+
 #home
 {
  padding-left: 10px;
