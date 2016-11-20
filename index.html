@@ -9,32 +9,68 @@
   <link rel="canonical" href="https://nadehi18.github.io" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px|Ubuntu" rel="stylesheet">
   <script src="https://use.fontawesome.com/9698efee89.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/smoothscroll.js"></script>
 </head>
 <body>
 </body>
   <div id=nav>
     <a id=home className="navlin" href=index.html>&#xf015;<span id=vishome> Home</a>
-    <a id=notes className="navlin" href=notes.html><span id=visnotes>Notes  <span id=visible>&#xf02e;</a>
+    <a id=notes className="navlin" href=notes.html><span id=visnotes>Notes   <span id=visible>&#xf02e;</a>
   </div>
-
-
-<div id=main>
+<div id=top class=main>
+  <div id=aligner>
+    <a id=arrow>&#xf063;</a>
+  </div>
   <div id=panel1>
     <h1>Nathan Higley</h1>
     <p>Christian. Programmer. Content Creator.</p>
   </div>
+    <div id=down>
+      <a id=arrow href=#about class="smoothScroll">&#xf063;</a>
+    </div>
 </div>
 <div id=spacer>
 </div>
-<div id=main>
+<div id=about class=main>
+  <div id=up>
+    <a id=arrow href=#top class="smoothScroll">&#xf062;</a>
+  </div>
+  <div id=panel1>
+    <h1>About</h1>
+    <p></p>
+  </div>
+    <div id=down>
+      <a id=arrow href=#social class="smoothScroll">&#xf063;</a>
+    </div>
 </div>
 <div id=spacer>
 </div>
-<div id=main>
+<div id=social class=main>
+  <div id=up>
+    <a id=arrow href=#about class="smoothScroll">&#xf062;</a>
+  </div>
+  <div id=panel1>
+    <h1>Social Media</h1>
+    <p></p>
+  </div>
+    <div id=down>
+      <a id=arrow href=#bottom class="smoothScroll">&#xf063;</a>
+    </div>
 </div>
 <div id=spacer>
 </div>
-<div id=main>
+<div id=bottom class=main>
+  <div id=up>
+    <p></p><a id=arrow href=#social class="smoothScroll">&#xf062;</a>
+  </div>
+  <div id=panel1>
+    <h1>Notes</h1>
+    <p></p>
+  </div>
+    <div id=down>
+      <a id=topbutton href=#top class="smoothScroll">top</a>
+    </div>
 </div>
 
 </body>
