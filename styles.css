@@ -1,72 +1,101 @@
 html, body { /**Main styling**/
-    text-align: center;
-    background-image: url(images/background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 0px;
-    margin: 0;
-    height: 100%;
+  text-align: center;
+  background-image: url(images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 0px;
+  margin: 0;
+  height: 100%;
 }
 
- a:link
- {
-     text-decoration: none;
-     color: #0465a9;
- }
-
- a:visited
- {
+a:link
+{
    text-decoration: none;
    color: #0465a9;
- }
+}
+
+a:visited
+{
+ text-decoration: none;
+ color: #0465a9;
+}
 
 #nav
 {
-  width: 100%;
-  height: 7.5%;
-  background-color: #242424;
-  color: #0465a9;
-  position: fixed;
-  box-shadow: 0 0 1px black;
-  font-size: 30px;
-  padding-top: 1%;;
+width: 100%;
+height: 7.5%;
+background-color: #242424;
+color: #0465a9;
+position: relative;;
+font-size: 30px;
+padding-top: 1%;
+font-family: 'Open Sans', sans-serif;
+text-align: left;
 }
 
- #main
- {
-   width: 100%;
-   height: 100%;
-   background-color: #242424;
-   color: #0465a9;
-   box-shadow: 0 0 20px black;
-   font-size: 20px;
- }
 
- #spacer
- {
-   width: 100%;
-   height: 20%;
-   background-color: rgba(0, 0, 0, 0.8);
-   opacity: 80%;
- }
+#main
+{
+ width: 100%;
+ height: 100%;
+ background-color: #242424;
+ color: #0465a9;
+ box-shadow: 0 0 20px black;
+ font-family: 'Slabo 27px', serif;
+ display: table;
+}
 
- #home
- {
-   padding-right: 5%;
- }
+#spacer
+{
+ width: 100%;
+ height: 20%;
+ background-color: rgba(0, 0, 0, 0.8);
+ opacity: 80%;
+}
 
- #notes
- {
-   padding-left: 5%;
- }
+#panel1
+{
+  display: table-cell;
+  vertical-align: middle;
+}
 
+#home
+{
+ padding-left: 1%;
+}
 
+#notes
+{
+ padding-right: 1%;
+ text-align: right;
+ float: right;
+}
 
+#vishome
+{
+ color: #242424;
+}
 
+#home:hover #vishome
+{
+color: #0465a9;
+transition: 1s;
+}
 
-@media (max-width: 700px) and (orientation: portrait),(max-width: 575px) and (orientation: landscape) { /**Make sure device is mobile, second part is added because some devices will not fit in the other one**/
+#visnotes
+{
+color: #242424;
+}
 
+#notes:hover #visnotes
+{
+color: #0465a9;
+transition: 1s;
+}
 
-@media (min-width: 700px), (orientation: landscape) and (min-width: 575px) { /**Makes sure device is big enough for full desktop version.**/
+#visible
+{
+ color: #0465a9;
+}
