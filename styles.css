@@ -92,6 +92,7 @@ text-align: left;
 {
   background-color: #0465a9;
   color: #242424;
+  transition: .25s;
 }
 
 #topbutton
