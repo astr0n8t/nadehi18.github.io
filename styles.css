@@ -119,6 +119,10 @@ text-align: left;
   display: table-cell;
   color: #242424;
 }
+.sociallink 
+{
+	padding: 10px;
+}
 
 #link
 {
