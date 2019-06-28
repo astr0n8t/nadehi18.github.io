@@ -2,98 +2,33 @@
 <html>
 <head>
 <meta name=viewport content="width=device-width, initial-scale=1">
-<title>Nadehi18</title>
-  //<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-  </script>
+<title>Nathan Higley</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" href="images/favicon.png">
   <link rel="canonical" href="https://nadehi18.github.io" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="scripts/smoothscroll.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-</body>
-  <div id=nav>
-    <a id=home className="navlin" href=index.html><span class="fa fa-home"></span><span id=vishome> Home</a>
-    <a id=notes className="navlin" href=notes.html><span id=visnotes>Notes   <span id=visible><span class="fa fa-bookmark"></span></a>
-  </div>
-<div id=top class=main>
-  <div id=aligner>
-    <a id=arrow><span class="fa fa-arrow-circle-up"></span></a>
-  </div>
-  <div id=panel1>
-    <h1>Nathan Higley</h1>
-    <p>Christian. Programmer. Content Creator.</p>
-  </div>
-    <div id=down>
-      <a id=arrow href="#about" class="smoothScroll"><span class="fa fa-arrow-circle-down"></span></a>
+  <div class=container-fluid id=topnav>
+    <div class=container>
+      <ul class="nav nav-pills nav-justified">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
     </div>
-</div>
-<div id=spacer>
-</div>
-<div id=about class=main>
-  <div id=up>
-    <a id=arrow href="#top" class="smoothScroll"><span class="fa fa-arrow-circle-up"></span></a>
   </div>
-  <div id=panel1>
-    <h1>About</h1>
-    <span>I'm a 16 year old Christian that enjoys programming and making cool things on the internet.
-          I use Arch Linux, and am quite familiar with the command line.
-          I also play Minecraft and listen to music a lot.
-    </span>
-  </div>
-  <div id=down>
-    <a id=arrow href="#social" class="smoothScroll"><i class="fa fa-arrow-circle-down"></i></a>
-  </div>
-</div>
-<div id=spacer>
-</div>
-<div id=social class=main>
-  <div id=up>
-    <a id=arrow href="#about" class="smoothScroll"><i class="fa fa-arrow-circle-up"></i></a>
-  </div>
-  <div id=panel1>
-    <h1>Social Media</h1>
-    <br>
-    <p class=sociallink><a href=https://github.com/nadehi18 id=link><span class="fa fa-github"></span> GitHub</a></p>
-    <p class=sociallink><a href=https://instagram.com/nadehi18 id=link><span class="fa fa-instagram"></span> Instagram</a></p>
-    <p class=sociallink><a href=https://www.twitter.com/nadehi18 id=link><span class="fa fa-twitter"></span> Twitter</a></p>
-    <p class=sociallink><a href=https://www.youtube.com/channel/UCXq2lLx9KBy-7_AydhF7RwQ id=link><span class="fa fa-youtube-play"></span> YouTube</a></p>
-  </div>
-    <div id=down>
-      <a id=arrow href="#bottom" class="smoothScroll"><span class="fa fa-arrow-circle-down"></span></a>
-    </div>
-</div>
-<div id=spacer>
-</div>
-<div id=bottom class=main>
-  <div id=up>
-    <a id=arrow href="#social" class="smoothScroll"><span class="fa fa-arrow-circle-up"></span></a>
-  </div>
-  <div id=panel1>
-    <h1>Notes</h1>
-    <p>Notes is a place for me to put anything<br> I want to remember relating to technology.</p>
-    <br>
-    <a id=link href=notes.html><span class="fa fa-bookmark"></span> Notes</a>
-  </div>
-    <div id=down>
-      <a id=arrow href="#top" class="smoothScroll"><span class="fa fa-toggle-up"></span></a>
-    </div>
-</div>
+
 
 </body>
 </html>
