@@ -69,15 +69,7 @@ li.nav
   background-color: #e5e5e5;
 }
 
-@media only screen and (max-width: 600px) {
-  #home {
-    padding-top: 40%;
-    height: auto;
-  }
-  .labels {
-    display: none;
-  }
-}
+
 
 #about
 {
@@ -86,6 +78,7 @@ li.nav
   width: auto;
   background-color: #000000;
   text-align: center;
+  overflow: hidden;
 }
 
 #work
@@ -138,3 +131,41 @@ li.nav
   color: #000000;
 }
 
+#aboutpar
+{
+  color: white;
+  padding: 5%;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.1rem;
+}
+
+.nowrap
+{
+  white-space: nowrap;
+}
+
+.flexbox 
+{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  flex-flow: column;
+ }
+
+
+ @media only screen and (max-width: 600px) {
+  #home {
+    padding-top: 40%;
+    height: auto;
+  }
+  #about {
+    height: auto;
+    padding-top: 20%;
+  }
+  .labels {
+    display: none;
+  }
+  nav {
+    padding-top: 5%;
+  }
+}
