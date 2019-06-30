@@ -66,6 +66,7 @@ li.nav
   width: auto;
   text-align: center;
   overflow: hidden;
+  background-color: #e5e5e5;
 }
 
 @media only screen and (max-width: 600px) {
@@ -83,6 +84,8 @@ li.nav
   box-shadow: inset 0 5px 5px -5px;
   height: 100%;
   width: auto;
+  background-color: #000000;
+  text-align: center;
 }
 
 #work
@@ -107,16 +110,31 @@ li.nav
   border-radius: 100%;
 }
 
+#profile2
+{
+  height: auto;
+  width: 60%;
+  border-radius: 100%;
+}
+
 #header
 {
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
-  color: #428bca;
+  color: #73A9D8;
+  padding-bottom: 30px;
+}
+
+#header2
+{
+  color: #73A9D8;
+  font-family: 'Raleway', sans-serif;
+  font-size: 3em;
+  padding: 10%;
 }
 
 #title
 {
-  color: black
+  color: #000000;
 }
-
 
