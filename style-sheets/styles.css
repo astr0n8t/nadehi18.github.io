@@ -9,12 +9,14 @@ a.nav
   text-decoration: none;
   color: #428bca;
   padding: 10px;
+  border-radius: 15px;
 }
 
 a.nav:visited
 {
   text-decoration: none;
   color: #428bca;
+  border-radius: 15px;
 }
 
 a.nav:hover
@@ -58,11 +60,6 @@ li.nav
   white-space: nowrap;
 }
 
-#spacer
-{
-
-}
-
 #home
 {
   height: 100%;
@@ -75,6 +72,9 @@ li.nav
   #home {
     padding-top: 40%;
     height: auto;
+  }
+  .labels {
+    display: none;
   }
 }
 
