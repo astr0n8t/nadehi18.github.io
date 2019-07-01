@@ -148,7 +148,20 @@ li.nav
 {
   font-size: 2rem;
   padding: 20px;
-  padding-top: 7.5%;
+  padding-top: 10%;
+}
+
+#contactheader
+{
+  color: #ffffff;
+  padding-top: 10%;
+  padding-left: 5%;
+  font-size: 1.75rem;
+}
+
+#contactheader2
+{
+  font-size: 1.2rem;
 }
 
 .workitem
@@ -190,6 +203,39 @@ li.nav
   transition: .25s;
 }
 
+.contactsection
+{
+  text-align: center;
+  font-size: 2rem;
+  color: #E55346;
+  padding: 5%;
+}
+
+.contactlink
+{
+  color: #ffffff;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border-width: 2px;
+  border-color: #ffffff;
+  border-style: solid;
+  padding: 10px;
+}
+
+.contactlink:hover
+{
+  color: #252C39;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border-width: 2px;
+  border-color: #ffffff;
+  border-style: solid;
+  padding: 10px;
+  background-color: #ffffff;
+  text-decoration: none;
+  transition: .25s;
+}
+
 .nowrap
 {
   white-space: nowrap;
@@ -214,6 +260,10 @@ li.nav
     padding-top: 20%;
   }
   #work {
+    height: auto;
+    padding-top: 20%;
+  }
+  #contact {
     height: auto;
     padding-top: 20%;
   }
