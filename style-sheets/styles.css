@@ -83,9 +83,13 @@ li.nav
 
 #work
 {
-  box-shadow: inset 0 5px 5px -5px;
-  height: 100%;
+  box-shadow: inset 0 5px 5px -5px black;
+  height: auto;
   width: auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: #73A9D8;
+  color: #000000;
 }
 
 #contact
@@ -93,6 +97,7 @@ li.nav
   box-shadow: inset 0 5px 5px -5px;
   height: 100%;
   width: auto;
+  background-color: #252C39;
 }
 
 #profile
@@ -139,6 +144,52 @@ li.nav
   font-size: 1.1rem;
 }
 
+#workheader
+{
+  font-size: 2rem;
+  padding: 20px;
+  padding-top: 7.5%;
+}
+
+.workitem
+{
+  background-color: #000000;
+  height: auto;
+  padding: 2%;
+  color: #73A9D8;
+  padding-bottom: 3%;
+}
+
+.worktitle
+{
+  font-size: 1.75rem;
+}
+
+.worklink
+{
+  color: #73A9D8;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border-width: 2px;
+  border-color: #73A9D8;
+  border-style: solid;
+  padding: 10px;
+}
+
+.worklink:hover
+{
+  color: #000000;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border-width: 2px;
+  border-color: #73A9D8;
+  border-style: solid;
+  padding: 10px;
+  background-color: #73A9D8;
+  text-decoration: none;
+  transition: .25s;
+}
+
 .nowrap
 {
   white-space: nowrap;
@@ -162,8 +213,15 @@ li.nav
     height: auto;
     padding-top: 20%;
   }
+  #work {
+    height: auto;
+    padding-top: 20%;
+  }
   .labels {
     display: none;
+  }
+  .workitem {
+    padding-bottom: 15%;
   }
   nav {
     padding-top: 5%;
