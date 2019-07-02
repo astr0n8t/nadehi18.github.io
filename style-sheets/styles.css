@@ -98,6 +98,7 @@ li.nav
   height: 100%;
   width: auto;
   background-color: #252C39;
+  overflow: hidden;
 }
 
 #profile
@@ -208,7 +209,7 @@ li.nav
   text-align: center;
   font-size: 2rem;
   color: #E55346;
-  padding: 5%;
+  padding-top: 2.5%;
 }
 
 .contactlink
