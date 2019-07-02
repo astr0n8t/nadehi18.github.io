@@ -250,6 +250,13 @@ li.nav
   flex-flow: column;
  }
 
+ footer
+ {
+  padding-left: 2%;
+  padding-top: 1%;
+  text-emphasis: strong;
+ }
+
 
  @media only screen and (max-width: 600px) {
   #home {
