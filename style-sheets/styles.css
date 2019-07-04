@@ -38,7 +38,7 @@ nav
   position: fixed;
   z-index: 99;
   padding: 1%;
-  box-shadow: 0 0 5px 0;
+  box-shadow: 0 0 10px 0 black;
   font-size: 1.5em;
   background-color: #ffffff;
 
@@ -66,14 +66,14 @@ li.nav
   width: auto;
   text-align: center;
   overflow: hidden;
-  background-color: #e5e5e5;
+  background-color: #252C39;
 }
 
 
 
 #about
 {
-  box-shadow: 0 0 5px 0;
+  box-shadow: 0 0 10px 0 black;
   height: 100%;
   width: auto;
   background-color: #000000;
@@ -120,7 +120,7 @@ li.nav
 {
   font-family: 'Raleway', sans-serif;
   font-size: 2em;
-  color: #73A9D8;
+  color: #DDDBF1;
   padding-bottom: 30px;
 }
 
@@ -134,7 +134,7 @@ li.nav
 
 #title
 {
-  color: #000000;
+  color: #ffffff;
 }
 
 #aboutpar
