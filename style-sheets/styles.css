@@ -265,7 +265,7 @@ li.nav
  }
 
 
- @media only screen and (max-width: 600px) {
+ @media only screen and (max-width: 720px) {
   #home {
     padding-top: 40%;
     height: auto;
