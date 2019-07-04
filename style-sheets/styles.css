@@ -1,7 +1,6 @@
 html, body { /**Main styling**/
  margin: 0;
  height: 100%;
- scroll-behavior: smooth;
 }
 
 a.nav
