@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nadehi18
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nathanhigley.com
+  * I am nadehi18 (https://keybase.io/nadehi18) on keybase.
+  * I have a public key ASCC7-I4GTHNTqfPXSnVZvNq41bKZa8ttpCqW9QCC4udgQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120bbd51f316d8f84a96d77200b8e0c27dde8420572819db8bac766e29677c292e50a",
+      "host": "keybase.io",
+      "kid": "012082efe2381931cd4ea7cf5d29d566f36ae356ca65af2db690aa5bd4020b8b9d810a",
+      "uid": "e4556b5961f7d027a822c4f042576719",
+      "username": "nadehi18"
+    },
+    "merkle_root": {
+      "ctime": 1563413664,
+      "hash": "95335ff1135e1b415fb29e5ea7aa138fff9265b4eb90193269447a56995a359c530258d77ebf3af08cb272fdf4f1e537c928681394b2fa48f7bd7ec545a54023",
+      "hash_meta": "21213beb795131c6ac482f03e5e38a480257a88f8e0c473aec9b499117cab585",
+      "seqno": 5787124
+    },
+    "service": {
+      "entropy": "tVwIm7ePABlaqdx6dM4lAO48",
+      "hostname": "nathanhigley.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.2.0"
+  },
+  "ctime": 1563413676,
+  "expire_in": 504576000,
+  "prev": "90ff1ce2918803e30b3e685a53d03175e62498a420c3cdae09d7a7d9212c758c",
+  "seqno": 11,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEggu/iOBkxzU6nz10p1WbzauNWymWvLbaQqlvUAguLnYEKp3BheWxvYWTESpcCC8QgkP8c4pGIA+MLPmhaU9AxdeYkmKQgw82uCden2SEsdYzEIIY7rJCHLlPwm2fCQhXhVc+q49rkLoooaaSLseF0pMJDAgHCo3NpZ8RA3WMNzRKl1bem3kPTrVNAUw8BilDvY1w/ARfxq3UbdiYYjgXOOXsZe2OQdoJpJq8nweJGIM+xGeEZIZuyJplkA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEII/Rdj0u/059XJ2CJAdfW2X74kFWBgrFkpd93VQEg3O8o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nadehi18
+
+==================================================================
