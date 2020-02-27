@@ -100,6 +100,30 @@ li.nav
   overflow: hidden;
 }
 
+#notes
+{
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+  background-color: #252C39;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.25em;
+  color: #DDDBF1;
+  padding: 5%;
+  padding-top: 15%;
+}
+
+#note-list
+{
+  background-color: white;
+  padding: 25px;
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+
+  
+}
+
 #profile
 {
   box-shadow: 0 0 5px 0;
@@ -255,6 +279,13 @@ li.nav
   flex-flow: column;
  }
 
+ .flexbox-notes 
+{
+  display:flex;
+  justify-content: left;
+  flex-flow: column;
+ }
+
  footer
  {
   padding-left: 2%;
@@ -282,6 +313,10 @@ li.nav
   #contact {
     height: auto;
     padding-top: 20%;
+  }
+  #notes {
+    height: auto;
+    padding-top: 25%;
   }
   #header2 {
     padding: 2%;
