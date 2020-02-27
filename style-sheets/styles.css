@@ -120,8 +120,57 @@ li.nav
   height: auto;
   width: 100%;
   border-radius: 10px;
+}
 
-  
+.note-header
+{
+  font-size: 1.5rem;
+  padding-left: 0;
+}
+
+.note-spacer
+{
+  padding-top: 10%;
+}
+
+.note-body
+{
+  padding: 0;
+}
+
+.note-list-button
+{
+  font-size: 1.2rem;
+  color: #DDDBF1;
+  background-color: #252C39;
+  border-radius: 15px;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding: 1.5%;
+  padding-left: 3%;
+}
+.note-list-button:hover
+{
+  text-decoration: none;
+  color: white;
+  background-color: #428bca;
+}
+
+.note-list-item
+{
+  list-style-type: none;
+  padding-left: 3%;
+  padding-bottom: 1%;;
+}
+
+.note-list-category
+{
+  font-size: 1.2rem;
+  color: #252C39;
+  list-style-type: none;
+  padding-bottom: 1%;
 }
 
 #profile
@@ -142,9 +191,11 @@ li.nav
 #header
 {
   font-family: 'Raleway', sans-serif;
-  font-size: 2em;
+  font-size: 2rem;
   color: #DDDBF1;
   padding-bottom: 30px;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
 #header2
@@ -317,6 +368,9 @@ li.nav
   #notes {
     height: auto;
     padding-top: 25%;
+  }
+  .note-spacer {
+    padding: 20%;
   }
   #header2 {
     padding: 2%;
