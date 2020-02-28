@@ -8,6 +8,7 @@ body {
   scrollbar-color: #428bca;
   scrollbar-track-color: transparent;
 }
+/*
 body::-webkit-scrollbar {
   width: 6px;
   background-color: #428bca;
@@ -27,7 +28,7 @@ body::-webkit-scrollbar-track-piece:start {
 }
 body::-webkit-scrollbar-track-piece:end {
   background-color: yellow;
-}
+}*/
 
 a.nav
 {
@@ -127,9 +128,8 @@ li.nav
 
 #notes
 {
-  height: 100%;
+  height: auto;
   width: auto;
-  overflow: hidden;
   background-color: #252C39;
   font-family: 'Raleway', sans-serif;
   font-size: 1.25em;
