@@ -1,0 +1,145 @@
+<!--*INDEXED*-->
+<!--*INDEXED*-->
+<html>
+<head>
+    <!-- meta things -->
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>Note - Nathan Higley</title>
+    <link rel="canonical" href="https://nathanhigley.com" />
+    <!-- end meta things -->
+  
+    <!-- favicon code -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../images/site.webmanifest">
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="../../images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- end favicon code -->
+  
+    <!-- style sheets -->
+    <link rel="stylesheet" href="../../style-sheets/styles.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot.css">
+    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../style-sheets/fontawesome.css">
+    <link rel="stylesheet" href="../../style-sheets/fonts.css">
+    <!-- end style sheets -->
+    <link rel="stylesheet" href="css/boostnote.css">
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="css/katex.min.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="note-body">
+
+    <!-- nav code -->
+    <nav>
+        <ul class="note-header"> 
+            <li class="nav"><a class="nav" href="../../index.html#home"><i class="fas fa-igloo"></i><span class="labels"> Home</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#about"><i class="fas fa-info-circle"></i><span class="labels"> About</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#work"><i class="fas fa-desktop"></i><span class="labels"> Work</span></a></li>
+            <li class="nav"><a class="nav" href="../../index.html#contact"><i class="fas fa-address-card"></i><span class="labels"> Contact</span></a></li>
+            <li class="nav"><a class="nav" href="../notes.html"><i class="fas fa-sticky-note"></i><span class="labels"> Notes</span></a></li>
+        </ul>
+    </nav>
+    <!-- end nav code -->
+    <div class="d-flex" >
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12 note-spacer"></div>
+          <div class="col-lg-12"><h1 id="CentOS-NFS-Share-Box-Setup" data-line="0">CentOS NFS Share Box Setup</h1><h2 id="Misc-Things" data-line="2">Misc Things</h2>
+<p data-line="4">Get temporary network:</p>
+<blockquote data-line="5">
+<p data-line="5">sudo dhclient</p>
+</blockquote>
+<p data-line="7">Reboot faster:</p>
+<blockquote data-line="8">
+<p data-line="8">sudo init 6</p>
+</blockquote>
+<h2 id="Format-devsdb" data-line="10">Format /dev/sdb</h2>
+<p data-line="12">Install <a href="https://rpmfusion.org/Configuration">rpmfusion</a> for exfat support.</p>
+<blockquote data-line="14">
+<p data-line="14">sudo dnf install --nogpgcheck <a href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm">https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm</a><br>
+sudo dnf install --nogpgcheck <a href="https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm">https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm</a> <a href="https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm">https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm</a><br>
+sudo dnf config-manager --enable PowerTools<br>
+sudo dnf update<br>
+sudo dnf install exfat-utils fuse-exfat</p>
+</blockquote>
+<p data-line="21">Format drive:</p>
+<blockquote data-line="23">
+<p data-line="23">sudo mkfs.exfat /dev/sdb</p>
+</blockquote>
+<p data-line="27">Mount:</p>
+<blockquote data-line="30">
+<p data-line="30">sudo mkdir /mount-point<br>
+sudo mount /dev/sdb /mount-point</p>
+</blockquote>
+<p data-line="33">Setup fstab entry:</p>
+<blockquote data-line="34">
+<p data-line="34">sudo vim /etc/fstab</p>
+</blockquote>
+<pre class="code CodeMirror cm-s-dracula" data-line="36">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">/dev/sdb    /mount-point  exfat rw,async,umask=0 0 0
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h2 id="Setup-NFS" data-line="41">Setup NFS</h2>
+<p data-line="43">Tutorial used:<br>
+<a href="https://www.howtoforge.com/tutorial/setting-up-an-nfs-server-and-client-on-centos-7/">Setting Up an NFS Server and Client on CentOS 7.2</a></p>
+<ol>
+<li data-line="46">Install software</li>
+</ol>
+<blockquote data-line="48">
+<p data-line="48">yum install nfs-utils</p>
+</blockquote>
+<ol start="2">
+<li data-line="50">Setup Startup Scripts</li>
+</ol>
+<blockquote data-line="52">
+<p data-line="52">systemctl enable nfs-server.service<br>
+systemctl start nfs-server.service</p>
+</blockquote>
+<ol start="3">
+<li data-line="55">Setup NFS<br>
+Make the config</li>
+</ol>
+<blockquote data-line="57">
+<p data-line="57">sudo vim /etc/export:</p>
+</blockquote>
+<pre class="code CodeMirror cm-s-dracula" data-line="58">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
+        <code class="">/mount-point 192.168.0.2(rw) 192.168.0.3(rw)
+</code>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="62">Export the config:</p>
+<blockquote data-line="63">
+<p data-line="63">sudo exportfs -a<br>
+Those IP’s should now have read/write access to the share.</p>
+</blockquote>
+<ol start="4">
+<li data-line="66">Setup final networking</li>
+</ol>
+<p data-line="68">Setup Static IP on CentOS:</p>
+<p data-line="70">Edit Networking config:</p>
+<blockquote data-line="71">
+<p data-line="71">sudo vim /etc/sysconfig/network-scripts/ifcfg-ens32</p>
+</blockquote>
+<pre class="code CodeMirror cm-s-dracula" data-line="72">        <span class="filename"></span>
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span></span>
+        <code class="">NETMASK=225.255.255.0
+IPADDR=192.168.0.1
+ONBOOT=yes
+BOOTPROTO=none
+USERCTL=no
+</code>
+<i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre></div></div></div></div>
+<!--footer code-->
+<footer>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://github.com/nadehi18"><i class="fab fa-github"></i></a>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/nadehi18"><i class="fab fa-linkedin"></i></a>
+    <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://twitter.com/nadehi18"><i class="fab fa-twitter"></i></a>
+</footer>
+<!-- end footer code-->
+</body>            </html>

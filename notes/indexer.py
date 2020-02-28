@@ -47,9 +47,12 @@ class Indexer():
             self.files_to_process = self.get_files_to_index()
 
             for file in self.files_to_process:
-                print(file)
-                self.process_file(file)
-                self.add_file_to_notes(file)
+                try:
+                    self.process_file(file)
+                    self.add_file_to_notes(file)
+                    print("Indexed \"{}\" Successfully".format(file))
+                except:
+                    print("One or more errors while processing \"{}\".  It will not be indexed.".format(file))
 
 
 
@@ -129,45 +132,59 @@ class Indexer():
     def add_file_to_notes(self, filename):      
 
         # Define variables
-        note_category = None
+        # The note name is pulled from the filename but you have to pull out the
+        # directory and remove the file extension
         note_name = filename.split('/')[1].split('.html')[0]
+        note_category = None
         note_line = None
         category_line = None
 
 
         # Assign category based on filename
-        if "-" in filename.split('/')[1]:
-            split_name = filename.split("-")
+        if "-" in note_name:
+            # Pull the category from the filename based on the - char
+            split_name = note_name.split("-")
             note_category = split_name[0]
-            note_name = split_name[1].split('.html')[0]
+            note_name = split_name[1]
+            # Open and copy over the category template
             with open(str(self.resource_folder + self.settings["note-category-file"])) as cat_file:
                 category_line = cat_file.readline()
+            # Replace the marker with the correct variable
             category_line = category_line.replace("<!--*CATEGORYNAME*-->", note_category) + '\n'
         
+        # Open and copy over the note item template
         with open(str(self.resource_folder +self.settings["note-item-file"])) as note_file:
             note_line = note_file.readline()
+         # Replace the markers with the correct variable 
         note_line = note_line.replace("<!--*NOTENAME*-->", note_name).replace("<!--*NOTEURL*-->", filename) + '\n'
 
+        # Open the files to read and write to
         old_index_file = open(self.settings["index-file"], "r")
         tmp_index_filename = str(self.settings["index-file"] + '.tmp')
         index_file = open(tmp_index_filename, "w")
 
+        # Iterate through the index file until the beginning of the area is found
         start_of_edit_found = False
         while not start_of_edit_found:
             line = old_index_file.readline()
             if "<!--*STARTEDIT*-->" in line:
                 start_of_edit_found = True
+            # Copy over the text from the old file into the new file
             index_file.write(line)
 
+        # Check if we are assigning this note to a category
         if note_category:
+            # Search for the category
             category_found = False
             while not category_found:
                 line = old_index_file.readline()
+                # The category does not exist so add it
                 if "<!--*ENDEDIT*-->" in line:
                     index_file.write(category_line)
                     index_file.write(note_line)
                     index_file.write(line)
                     category_found = True
+                # 
                 elif "note-list-category" in line and note_category in line.split("</i>")[1]:
                     index_file.write(line)
                     index_file.write(note_line)
