@@ -115,19 +115,20 @@ class Indexer():
             if '.html' in file:
                 existing_files.append(full_path)
 
-        for x in range(len(existing_files)):
-            file = existing_files[0]
+        files_to_process = []
+
+        for file in existing_files:
             # Store the line
             line = None
             # Open each file and grab the third line
             with open(file, 'r') as current_file:
-                line = current_file.readline().strip()
+                line = current_file.readline()
                 
             # Check if the file has been indexed or if it is blank
-            if line == "" or "<!--*INDEXED*-->" in line:
-                existing_files.remove(file)
+            if line != "" and "<!--*INDEXED*-->" not in line:
+                files_to_process.append(file)
         # Return the list of paths which need to be indexed
-        return existing_files
+        return files_to_process
     
     def add_file_to_notes(self, filename):      
 
