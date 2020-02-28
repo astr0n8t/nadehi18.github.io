@@ -167,11 +167,17 @@ def process_file(self, filename):
         
         current_line = line.strip()
         if len(markers_to_find) > 0 and markers_to_find[operations_to_do[0]][0] in current_line:
+            # Set the current operation to the next to do
+            op = operations_to_do[0]
+            # Set the beginnning marker
+            marker_s = markers_to_find[operations_to_do[0]][0]
+            # Set the end marker
+            marker_e = markers_to_find[operations_to_do[0]][1]
             # Open the template for the operation
-            template = open(str(self.resource_folder + self.settings[operations_to_do[0]]), 'r')
+            template = open(str(self.resource_folder + self.settings[op]), 'r')
 
             # Split the line off of the marker
-            split_line = current_line.split(markers_to_find[operations_to_do[0]][0])
+            split_line = current_line.split(marker_s)
             # If there is text before the delimiter, copy it to the new file before the template
             # Then make it so there is only one line in the split_line list
             if len(split_line) > 1:
@@ -189,18 +195,18 @@ def process_file(self, filename):
             template.close()
 
             # Check if the end marker is set for this operation
-            if markers_to_find[operations_to_do[0]][1]:
+            if marker_e:
                 # Prime the loop
                 end_marker_found = False
                 while not end_marker_found:
                     # Read the file until the end marker is found
                     old_line = old_file.readline()
-                    if markers_to_find[operations_to_do[0]][1] in old_line:
+                    if marker_e in old_line:
                         end_marker_found = True
 
             # Remove the marker and operation since we have completed them
-            del markers_to_find[operations_to_do[0]]
-            operations_to_do.remove(operations_to_do[0])
+            del markers_to_find[op]
+            operations_to_do.remove(op)
         else:
             # Otherwise copy the old file over
             temp_file.write(line)
