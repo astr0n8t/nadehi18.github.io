@@ -26,9 +26,9 @@ class Indexer():
 
         # Set what the markers look for
         self.markers = {
-            "html-head-file": '<head>',
-            "html-header-file": '<body>',
-            "html-footer-file": '</body>'
+            "html-head-file": ('<head>', '</head>'),
+            "html-header-file": ('<body>', None),
+            "html-footer-file": ('</body>', None)
         }   
 
         # A list of what operations are enabled in order (IMPORTANT)
@@ -113,8 +113,7 @@ class Indexer():
             line = None
             # Open each file and grab the third line
             with open(file, 'r') as current_file:
-                for x in range(0,3):
-                    line = current_file.readline().strip()
+                line = current_file.readline().strip()
                 
             # Check if the file has been indexed or if it is blank
             if line == "" or line == "<!--*INDEXED*-->":
@@ -159,23 +158,20 @@ def process_file(self, filename):
     operations_to_do = self.operations
     markers_to_find = self.markers
     
+    temp_file.write("<!--*INDEXED*-->\n")
+
     # Iterate through and parse the file
     # Doing one operation at a time
     num_line = 0
     for line in old_file:
-
-        # Mark the file as indexed
-        num_line += 1
-        if num_line == 3:
-            temp_file.write("<!--*INDEXED*-->")
         
         current_line = line.strip()
-        if len(markers_to_find) > 0 and markers_to_find[operations_to_do[0]] in current_line:
+        if len(markers_to_find) > 0 and markers_to_find[operations_to_do[0]][0] in current_line:
             # Open the template for the operation
             template = open(str(self.resource_folder + self.settings[operations_to_do[0]]), 'r')
 
             # Split the line off of the marker
-            split_line = current_line.split(markers_to_find[operations_to_do[0]])
+            split_line = current_line.split(markers_to_find[operations_to_do[0]][0])
             # If there is text before the delimiter, copy it to the new file before the template
             # Then make it so there is only one line in the split_line list
             if len(split_line) > 1:
@@ -191,6 +187,17 @@ def process_file(self, filename):
             
             # Close the template file 
             template.close()
+
+            # Check if the end marker is set for this operation
+            if markers_to_find[operations_to_do[0]][1]:
+                # Prime the loop
+                end_marker_found = False
+                while not end_marker_found:
+                    # Read the file until the end marker is found
+                    old_line = old_file.readline()
+                    if markers_to_find[operations_to_do[0]][1] in old_line:
+                        end_marker_found = True
+
             # Remove the marker and operation since we have completed them
             del markers_to_find[operations_to_do[0]]
             operations_to_do.remove(operations_to_do[0])
