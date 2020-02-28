@@ -185,22 +185,27 @@ class Indexer():
                     index_file.write(note_line)
                     index_file.write(line)
                     category_found = True
-                # 
+                # The category exists so append to it
                 elif "note-list-category" in line and note_category in line.split("</i>")[1]:
                     index_file.write(line)
                     index_file.write(note_line)
                     category_found = True
+                # Keep copying over previous entries and continuing through it
                 else:
                     index_file.write(line)
+        # Otherwise just add the entry to the general area
         else:
             index_file.write(note_line)
         
+        # Copy over the rest of the file
         for line in old_index_file:
             index_file.write(line)
         
+        # Close the files
         index_file.close()
         old_index_file.close()
 
+        # Replace the old index file with the newly created one
         replace(tmp_index_filename, self.settings["index-file"])
 
     def process_file(self, filename):
