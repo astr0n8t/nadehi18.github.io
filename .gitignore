@@ -1,3 +1,3 @@
 .vscode/
-notes/note-files/indexer.py
-notes/note-files/indexer-resources
+*.py
+*.config
