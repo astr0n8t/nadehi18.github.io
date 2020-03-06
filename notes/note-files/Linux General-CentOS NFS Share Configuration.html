@@ -110,22 +110,26 @@ Make the config</li>
 </blockquote>
 <pre class="code CodeMirror cm-s-dracula" data-line="58">        <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span>
-        <code class="">/mount-point 192.168.0.2(rw) 192.168.0.3(rw)
+        <code class="">/mount-point 192.168.0.2(rw, no_squash_root) 192.168.0.3(rw, no_squash_root)
 </code>
       <i><button class="clipboardButton"><svg width="13" height="13" viewBox="0 0 1792 1792"><path d="M768 1664h896v-640h-416q-40 0-68-28t-28-68v-416h-384v1152zm256-1440v-64q0-13-9.5-22.5t-22.5-9.5h-704q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h704q13 0 22.5-9.5t9.5-22.5zm256 672h299l-299-299v299zm512 128v672q0 40-28 68t-68 28h-960q-40 0-68-28t-28-68v-160h-544q-40 0-68-28t-28-68v-1344q0-40 28-68t68-28h1088q40 0 68 28t28 68v328q21 13 36 28l408 408q28 28 48 76t20 88z"></path></svg></button></i></pre><p data-line="62">Export the config:</p>
 <blockquote data-line="63">
 <p data-line="63">sudo exportfs -a<br>
 Those IP’s should now have read/write access to the share.</p>
 </blockquote>
-<ol start="4">
-<li data-line="66">Setup final networking</li>
-</ol>
-<p data-line="68">Setup Static IP on CentOS:</p>
-<p data-line="70">Edit Networking config:</p>
-<blockquote data-line="71">
-<p data-line="71">sudo vim /etc/sysconfig/network-scripts/ifcfg-ens32</p>
+<p data-line="66">Update SELinux Boolean:</p>
+<blockquote data-line="67">
+<p data-line="67">sudo setsebool -P nfs_export_all_rw 1</p>
 </blockquote>
-<pre class="code CodeMirror cm-s-dracula" data-line="72">        <span class="filename"></span>
+<ol start="4">
+<li data-line="70">Setup final networking</li>
+</ol>
+<p data-line="72">Setup Static IP on CentOS:</p>
+<p data-line="74">Edit Networking config:</p>
+<blockquote data-line="75">
+<p data-line="75">sudo vim /etc/sysconfig/network-scripts/ifcfg-ens32</p>
+</blockquote>
+<pre class="code CodeMirror cm-s-dracula" data-line="76">        <span class="filename"></span>
         <span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span></span>
         <code class="">NETMASK=225.255.255.0
 IPADDR=192.168.0.1
@@ -141,4 +145,4 @@ USERCTL=no
     <a class=footer-link target="_blank" rel="noopener noreferrer" href="https://twitter.com/nadehi18"><i class="fab fa-twitter"></i></a>
 </footer>
 <!-- end footer code-->
-</body>            </html>
+</body>
