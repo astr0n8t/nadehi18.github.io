@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: nathanhigley.com
-Token: 80db58f7310acd8242105001f6c94ce30ec1a41883a0b09a7f987f469d5698ac
